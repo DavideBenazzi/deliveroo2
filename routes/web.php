@@ -31,5 +31,5 @@ Route::prefix('admin')
         Route::get('/', 'HomeController@index')->name('home');
 
         //rotte post CRUD
-        // Route::resource('restaurant', 'RestaurantController');
+        Route::resource('plate', 'PlateController');
     });

@@ -20,9 +20,8 @@
             <h1>
                 {{-- {{ $restaurant->name }} --}}il tuo ristorante
             </h1>
-            <a href="">link alla  vista piatti</a><br>
+            <a href="{{ route('admin.plate.index') }}">link alla  vista piatti</a><br>
             <a href="">link alla  vista ordini/statistiche</a>
-
         </div>
     </div>
 </div>
