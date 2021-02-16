@@ -13,10 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+
+            <h1>
+                {{-- {{ $restaurant->name }} --}}il tuo ristorante
+            </h1>
+
+
         </div>
     </div>
 </div>
