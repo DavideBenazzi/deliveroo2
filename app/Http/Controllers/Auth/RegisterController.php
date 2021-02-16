@@ -52,10 +52,13 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required' , 'string' , 'max:255'],
-            'nameRestaurant' => ['required' , 'string' , 'max:255'],
             'vat' => ['required' , 'string' , 'min:11' , 'max:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nameRestaurant' => ['required', 'string', 'max:255'],
+            'emailRestaurant' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required' , 'string' , 'min:11' , 'max:11'],
+            'address' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -67,13 +70,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
-            'nameRestaurant' => $data['nameRestaurant'],
             'vat' => $data['vat'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'nameRestaurant' => $data['nameRestaurant'],
+            'emailRestaurant' => $data['emailRestaurant'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
         ]);
+
     }
 }

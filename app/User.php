@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','surname', 'nameRestaurant', 'vat', 'email', 'password',
+        'name','surname', 'vat', 'email', 'password', 'nameRestaurant', 'emailRestaurant' , 'phone' , 'address'
     ];
 
     /**
@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function restaurant() {
+        return $this->hasOne('App\Restaurant');
+    }
 }
