@@ -74,7 +74,10 @@ class PlateController extends Controller
      */
     public function show($id)
     {
-        //
+        //da lavorare con lo slug in futuro
+        $plate = Plate::find($id);
+
+        return view('admin.plate.show' , compact('plate'));
     }
 
     /**
