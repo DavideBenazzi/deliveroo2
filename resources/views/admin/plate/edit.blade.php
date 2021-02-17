@@ -38,7 +38,12 @@
 
                 <div class="form-group">
                     <label for="photo">Photo</label>
-                    <input class="form-control" type="file" name="photo" id="photo" accept="photo/*">
+                    @isset($beer->photo)
+                        <div class="wrap-image">
+                            <img width="200" src="{{asset('storage/' . $plate->photo)}}" alt="{{$plate->name}}">
+                        </div>
+                    @endisset
+                    <input class="form-control" type="file" name="photo" id="photo"  placeholder="{{old('photo', $plate->photo)}}" accept="photo/*">
                 </div>
 
                 <div class="form-group">

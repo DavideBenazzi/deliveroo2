@@ -5,13 +5,13 @@
     <ul class="container text-center">
         @foreach ($plates as $plate)
             <li class="list-unstyled list-group-item pt-5 pb-5">
-                {{-- <div>
+                <div>
                     @if (!empty($plate->photo))
                         <img class="mb-3" width="250" src="{{asset('storage/' . $plate->photo)}}" alt="{{$plate->name}}">
                     @else
-                        <img class="mb-3" width="250" src="{{asset('img/no-img.png')}}" alt="{{$beer->title}}">
+                        <img class="mb-3" width="250" src="{{asset('img/no-image.png')}}" alt="{{$plate->name}}">
                     @endif
-                </div> --}}
+                </div>
                 <div>
                     <h5>Name: {{$plate->name}}</h5>
                     <p>Availability: {{$plate->visibility}}</p>
@@ -28,10 +28,7 @@
             @endforeach
         </ul>
     </div>
-    <div class="">
-        <a href="{{ route('admin.plate.create') }}">Crea il tuo piatto</a>
-    </div>
-    <div class="">
-        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+    <div class="form-group mr-2">
+        <a class="btn btn-warning" href="{{route('admin.plate.create')}}">Crea il tuo piatto</a>
     </div>
 @endsection

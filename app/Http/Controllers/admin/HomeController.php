@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\User;
 class HomeController extends Controller
 {
     public function index() {
-        return view('admin/dashboard');
+
+        // $user=User::all();
+        $user = User::find(Auth::id());
+        //dd($user->nameRestaurant);
+        return view('admin/dashboard', compact('user'));
     }
 }
