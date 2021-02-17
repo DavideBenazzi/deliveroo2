@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plate;
+use App\User;
 
 class PlateController extends Controller
 {
@@ -27,7 +28,7 @@ class PlateController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.plate.create');
     }
 
     /**
@@ -38,7 +39,31 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
+
+        //acquisisci dati dalla form(create)
+        $data = $request->all();
+
+        //validazione
+        $request->validate($this->ruleValidation());
+
+        //get active user
+        $data['user_id']=Auth::id();
+
+        //controllo salvataggio photo
+        if(!empty($data['photo'])){
+            $data['photo'] = Storage::disk('public')->put('photo' , $data['photo']);
+        }
+
+
         //
+        $newPlate = new Plate();
+        $newPlate->fill($data);
+
+        $saved = $newPlate->save();
+
+        if($saved){
+            return redirect()->route('admin.plate.index');
+        }
     }
 
     /**
@@ -84,5 +109,16 @@ class PlateController extends Controller
     public function destroy($id)
     {
         //
+    }
+    private function ruleValidation(){
+        return [
+            'name' => 'required',
+            'description' => '',
+            'ingredients' => 'required',
+            'allergenic' => 'required',
+            'visibility'=>'required',
+            'price' => 'required',
+            'photo' => 'mimes:jpg,jpeg,png,bmp,psd',
+        ];
     }
 }

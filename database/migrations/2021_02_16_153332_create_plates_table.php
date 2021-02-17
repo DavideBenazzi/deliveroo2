@@ -15,7 +15,7 @@ class CreatePlatesTable extends Migration
     {
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // FK
+            $table->unsignedBigInteger('user_id')->nullable(); // FK
             $table->string('name', 50);
             $table->text('description');
             $table->text('photo');
