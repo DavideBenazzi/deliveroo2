@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plate;
@@ -108,7 +109,29 @@ class PlateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $request->validate($this->ruleValidation());
+
+        $plate = Plate::find($id);
+
+        //verifica img
+        if(!empty($data['photo'])){
+
+            //cancella l'immagine precedente
+            if(!empty($plate->photo)){
+                Storage::disk('public')->delete($plate->photo);
+            }
+
+            $data['photo'] = Storage::disk('public')->put('photo' , $data['photo']);
+        }
+
+        $update = $plate->update($data);
+
+        if($update){
+            return redirect()->route('admin.plate.show', $plate->id);
+        }
+
     }
 
     /**
@@ -117,9 +140,22 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        //referenza file da eliminare
+        $name = $plate->name;
+
+        //controllo cancellazione
+        $delete =$plate->delete();
+
+        if($delete){
+            //cancellazione immagine da db
+            if(!empty($plate->photo)){
+                Storage::disk('public')->delete($plate->photo);
+            }
+            //ritorno ad index menu dopo cancellazione
+            return redirect()->route('admin.plate.index')->with('plate.deleted' , $name);
+        }
     }
     private function ruleValidation(){
         return [
