@@ -31,4 +31,7 @@
     <div class="">
         <a href="{{ route('admin.plate.create') }}">Crea il tuo piatto</a>
     </div>
+    <div class="">
+        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+    </div>
 @endsection

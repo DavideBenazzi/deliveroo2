@@ -88,7 +88,15 @@ class PlateController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $plate = Plate::find($id);
+
+        //controolo errore utente pag 404 da creare
+        // if(empty($plate)){
+        //     abort(404);
+        // }
+
+        return view('admin.plate.edit' , compact('plate'));
     }
 
     /**

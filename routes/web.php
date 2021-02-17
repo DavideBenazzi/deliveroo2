@@ -28,7 +28,7 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function() {
         //home admin
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/', 'HomeController@index')->name('dashboard');
 
         //rotte post CRUD
         Route::resource('plate', 'PlateController');
