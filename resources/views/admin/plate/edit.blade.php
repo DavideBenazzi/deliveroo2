@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label for="photo">Photo</label>
-                    @isset($beer->photo)
+                    @isset($plate->photo)
                         <div class="wrap-image">
                             <img width="200" src="{{asset('storage/' . $plate->photo)}}" alt="{{$plate->name}}">
                         </div>
