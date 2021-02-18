@@ -115,6 +115,18 @@
                                 @enderror
                             </div>
                         </div>
+
+                        {{-- Form dei tipi --}}
+                        <div class='form-group'>
+                            @foreach ($types as $type)
+                                <div class='form-check'>
+                                    <input type="checkbox" class='form-check-input' name='types[]' id='type-{{$type->id}}' value="{{$type->id}}">
+                                    <label for="type-{{$type->id}}">{{$type->name}}</label>
+                                </div>   
+                            @endforeach
+                        </div>
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

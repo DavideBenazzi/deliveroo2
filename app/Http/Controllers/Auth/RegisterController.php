@@ -5,12 +5,17 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Type;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    // public function index() {
+    //     $types = Type::all();
+    //     return view('auth.register' , compact('types'));
+    // }
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -30,6 +35,11 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function showRegistrationForm() {
+        $types = Type::all();
+        return view('auth.register' , compact('types'));
+    }    
 
     /**
      * Create a new controller instance.
@@ -69,8 +79,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        
+    {      
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -81,7 +90,6 @@ class RegisterController extends Controller
             'emailRestaurant' => $data['emailRestaurant'],
             'phone' => $data['phone'],
             'address' => $data['address'],
-        ]);
-
+        ])->type()->attach($data['types']);
     }
 }
