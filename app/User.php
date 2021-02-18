@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function plate() {
         return $this->hasMany('App\Plate');
     }
+    
+    public function type() {
+        return $this->belongsToMany('App\Type');
+    }
 }
