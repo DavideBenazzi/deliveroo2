@@ -79,7 +79,13 @@
                 </div>
             @endif
 
-           <h1>Pagina principale sito con ricerca tipologie e ristoranti</h1>
+            <ul class="d-flex">
+                @foreach ($types as $type)
+                    <li>
+                        <a href="">{{ $type->name }}</a>                        
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </body>
 </html>
