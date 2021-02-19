@@ -21,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', 'UserController@index');
 
 Route::namespace('Api')->group(function() {
-    Route::get('/', 'UserController@index');
+    Route::get('/restaurants', 'UserController@index');
     // Route::get('/advanced-search', 'UserController@index');
 });

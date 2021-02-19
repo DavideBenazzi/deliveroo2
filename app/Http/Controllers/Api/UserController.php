@@ -12,6 +12,8 @@ class UserController extends Controller
         // return 'lista ristoranti';
 
         $user = User::all();
-        dd($user);
+        // dd($user);
+
+        return response()->json($user);
     }
 }
