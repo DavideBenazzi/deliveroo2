@@ -49810,7 +49810,23 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    restaurants: []
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+      // handle success
+      console.log(response.data);
+      _this.restaurants = response.data;
+    })["catch"](function (error) {
+      // handle error
+      console.log(error);
+    }).then(function () {// always executed
+    });
+  }
 });
 
 /***/ }),

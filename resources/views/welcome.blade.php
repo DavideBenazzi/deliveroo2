@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -78,14 +80,22 @@
                     @endauth
                 </div>
             @endif
-
-            <ul class="d-flex">
+            
+            <ul>
                 @foreach ($types as $type)
                     <li>
                         <a href="">{{ $type->name }}</a>                        
                     </li>
                 @endforeach
             </ul>
+
+            <div id="app">
+                <ul>
+                    <li v-for="restaurant in restaurants">
+                        @{{ restaurant.name }}                        
+                    </li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
