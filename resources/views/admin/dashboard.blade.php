@@ -12,6 +12,15 @@
             <a href="{{ route('admin.plate.index') }}">link alla  vista piatti</a><br>
             <a href="">link alla  vista ordini/statistiche</a>
         </div>
+        {{-- <div class="types">
+            @forelse ($user->types as $type)
+                <span class="badge badge-primary"> {{ $type->name }}</span>
+            
+            @empty  
+                <h3>No types</h3>
+
+            @endforelse
+        </div> --}}
     </div>
 </div>
 @endsection

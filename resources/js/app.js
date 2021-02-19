@@ -51,5 +51,11 @@ const app = new Vue({
             .then(function () {
                 // always executed
             });
-    }
+    },
+
+    // method: {
+    //     filteredRestaurant() {
+
+    //     }
+    // },
 });
