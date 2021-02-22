@@ -49612,9 +49612,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     filteredRestaurants: [],
     types: [],
     activeType: false,
-    nameRestaurant: ""
+    nameRestaurant: "",
+    checkedType: [],
+    checkedNames: []
   },
   methods: {
+    //funzione per ricerca ristoranti assocciati al tipo singolo
     filterType: function filterType(type) {
       console.log(type);
       this.filteredRestaurants = [];
@@ -49629,6 +49632,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       this.activeType = true;
       console.log(this.activeType);
     },
+    //funzione per ricerca nome ristorante
     nameSearch: function nameSearch() {
       this.filteredRestaurants = [];
       this.nameRestaurant = this.nameRestaurant.toLowerCase().trim();
@@ -49637,6 +49641,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         if (this.restaurants[i].nameRestaurant.toLowerCase().includes(this.nameRestaurant)) {
           if (!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
             this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+          }
+        }
+      }
+
+      console.log(this.filteredRestaurants);
+    },
+    //funzione per ricerca ristoranti assocciati a vari tipi
+    filterCheckType: function filterCheckType() {
+      this.filteredRestaurants = [];
+
+      for (var i = 0; i < this.restaurants.length; i++) {
+        for (var a = 0; a < this.checkedType.length; a++) {
+          if (this.checkedType[a] == this.restaurants[i].type_id) {
+            if (!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
+              this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+            }
           }
         }
       }
@@ -49731,8 +49751,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

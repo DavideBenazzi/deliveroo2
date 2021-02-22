@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
 
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
@@ -91,7 +91,7 @@
                     <li v-for="type in types">
                         <button v-on:click="filterType(type.id)">
                             <h4>@{{ type.name }}</h4>
-                        </button>                       
+                        </button>
                     </li>
                 </ul>
                 <div v-show="activeType">
@@ -102,7 +102,12 @@
                     </ul>
                 </div>
 
-                
+                {{-- form advanced research type restaurant --}}
+
+                <div v-for="type in types">
+                    <input type="checkbox" v-on:change="filterCheckType" :id="type.id" :value="type.id" v-model="checkedType">
+                    <label :for="type.id">@{{ type.name }}</label>
+                </div>
 
             </section>
 

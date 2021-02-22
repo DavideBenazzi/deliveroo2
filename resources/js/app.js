@@ -12,13 +12,16 @@ const app = new Vue({
     data: {
         restaurants: [],
         filteredRestaurants: [],
-        types: [] ,
+        types: [],
         activeType: false ,
         nameRestaurant: "" ,
+        checkedType:[],
+        checkedNames:[],
 
     },
 
     methods : {
+        //funzione per ricerca ristoranti assocciati al tipo singolo
         filterType(type) {
             console.log(type);
             this.filteredRestaurants = [];
@@ -29,8 +32,10 @@ const app = new Vue({
             }
             console.log(this.filteredRestaurants);
             this.activeType = true;
-            console.log(this.activeType);           
+            console.log(this.activeType);
         },
+
+        //funzione per ricerca nome ristorante
         nameSearch() {
             this.filteredRestaurants = [];
             this.nameRestaurant = this.nameRestaurant.toLowerCase().trim();
@@ -38,14 +43,32 @@ const app = new Vue({
                 if(this.restaurants[i].nameRestaurant.toLowerCase().includes(this.nameRestaurant)) {
                     if(!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
                         this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
-                    } 
-                                       
+                    }
+
                 }
 
             }
             console.log(this.filteredRestaurants);
+        },
 
-        }
+
+        //funzione per ricerca ristoranti assocciati a vari tipi
+        filterCheckType() {
+            this.filteredRestaurants = [];
+
+            for(let i = 0; i < this.restaurants.length ; i++){
+                for(let a = 0 ; a < this.checkedType.length ; a++){
+                    if(this.checkedType[a] == this.restaurants[i].type_id){
+
+                        if(!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
+                            this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                        }
+
+                    }
+                }
+            }
+            console.log(this.filteredRestaurants);
+        },
 
     },
     created() {
@@ -77,4 +100,3 @@ const app = new Vue({
 });
 
 
-       
