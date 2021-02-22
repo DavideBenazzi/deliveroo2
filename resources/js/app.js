@@ -4,58 +4,61 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+import "./bootstrap";
+import Vue from 'vue';
 
 const app = new Vue({
     el: '#app',
-
     data: {
         restaurants: [],
+        filteredRestaurants: [],
+        types: [] ,
+        activeType: false ,
 
     },
+    methods : {
+        filterType(type) {
+            console.log(type);
+            this.filteredRestaurants = [];
+            for( let i=0; i < this.restaurants.length; i++) {
+                if(type == this.restaurants[i].type_id) {
+                    this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                }
+            }
+            console.log(this.filteredRestaurants);
+            this.activeType = true;
+            console.log(this.activeType);
+            
+        }
 
+    },
     created() {
         axios
-            .get('http://127.0.0.1:8000/api/restaurants')
-            .then(response => {
-                // handle success
-                console.log(response.data);
-                this.restaurants = response.data;
-            })
-            .catch(error => {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
-    },
+        .get("http://127.0.0.1:8000/api/restaurants")
+        .then(response => {
+            // handle success
+            console.log(response.data);
+            this.restaurants = response.data;
+        })
+        .catch(error => {
+            // handle error
+            console.log(error);
+        });
 
-    // method: {
-    //     filteredRestaurant() {
+        axios
+        .get("http://127.0.0.1:8000/api/types")
+        .then(response => {
+            // handle success
+            console.log(response.data);
+            this.types = response.data;
+        })
+        .catch(error => {
+            // handle error
+            console.log(error);
+        });
+    }
 
-    //     }
-    // },
 });
+
+
+       

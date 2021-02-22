@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
 
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
@@ -80,22 +81,29 @@
                     @endauth
                 </div>
             @endif
-            
-            <ul>
-                @foreach ($types as $type)
-                    <li>
-                        <a href="">{{ $type->name }}</a>                        
-                    </li>
-                @endforeach
-            </ul>
 
-            <div id="app">
-                <ul>
-                    <li v-for="restaurant in restaurants">
-                        @{{ restaurant.name }}                        
+            <section id="app">
+                <h2>Our Type</h2>
+                <ul class="d-inline-flex">
+                    <li v-for="type in types">
+                        <button v-on:click="filterType(type.id)">
+                            <h4>@{{ type.name }}</h4>
+                        </button>                       
                     </li>
                 </ul>
-            </div>
+                <div v-show="activeType">
+                    <ul>
+                        <li v-for="restaurant in filteredRestaurants">
+                            @{{ restaurant }}
+                        </li>
+                    </ul>
+                </div>
+
+                
+
+            </section>
+
         </div>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

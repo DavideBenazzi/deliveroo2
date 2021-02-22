@@ -13,16 +13,27 @@ class UserController extends Controller
     public function index() {
         // return 'lista ristoranti';
 
-        $user = User::all();
-        // $type = Type::auth($user->id)
-        // dd($user);
-
-        // foreach ($users as $user) {
-        //     $restaurants = DB::table('type_restaurants')->where('restaurant_id', '=', 'restaurant')->get();
-        // }
+        $restaurants = DB::table('users')
+        ->select('*')
+        ->join('type_user','users.id', '=', 'type_user.user_id')
+        ->join('types','types.id','=', 'type_user.type_id')
+        ->get();
 
 
         // return response()->json($user);
-        return response()->json($user);
+        return response()->json($restaurants);
     }
+
+    public function type() {
+        // return 'lista ristoranti';
+
+        $types = Type::all();
+
+
+
+        // return response()->json($user);
+        return response()->json($types);
+    }
+
+    
 }
