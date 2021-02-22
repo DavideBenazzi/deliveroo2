@@ -82,15 +82,11 @@
                 </div>
             @endif
 
-            
-
             <section id="app">
-                <div>
-                    <button>
-                             <a href="{{ route('advancedResearch') }}">advancedResearch</a>
-                    </button>
+                <h2>Advanced Research</h2>
+                <div class="cerca">
+                    <input type="search" @keyup.enter="nameSearch" v-model="nameRestaurant" placeholder="Inserisci il nome del ristorante" name="" value="">
                 </div>
-                <h2>Our Type</h2>
                 <ul class="d-inline-flex">
                     <li v-for="type in types">
                         <button v-on:click="filterType(type.id)">

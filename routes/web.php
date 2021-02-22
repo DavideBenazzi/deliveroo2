@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/' , 'StaticPageController@home')->name('welcome');
+Route::get('/advancedResearch' , 'StaticPageController@advancedResearch')->name('advancedResearch');
 
 Auth::routes();
 

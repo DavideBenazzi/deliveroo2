@@ -49611,7 +49611,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     restaurants: [],
     filteredRestaurants: [],
     types: [],
-    activeType: false
+    activeType: false,
+    nameRestaurant: ""
   },
   methods: {
     filterType: function filterType(type) {
@@ -49627,6 +49628,20 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       console.log(this.filteredRestaurants);
       this.activeType = true;
       console.log(this.activeType);
+    },
+    nameSearch: function nameSearch() {
+      this.filteredRestaurants = [];
+      this.nameRestaurant = this.nameRestaurant.toLowerCase().trim();
+
+      for (var i = 0; i < this.restaurants.length; i++) {
+        if (this.restaurants[i].nameRestaurant.toLowerCase().includes(this.nameRestaurant)) {
+          if (!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
+            this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+          }
+        }
+      }
+
+      console.log(this.filteredRestaurants);
     }
   },
   created: function created() {

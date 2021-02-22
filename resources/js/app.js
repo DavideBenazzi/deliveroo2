@@ -14,8 +14,10 @@ const app = new Vue({
         filteredRestaurants: [],
         types: [] ,
         activeType: false ,
+        nameRestaurant: "" ,
 
     },
+
     methods : {
         filterType(type) {
             console.log(type);
@@ -27,8 +29,22 @@ const app = new Vue({
             }
             console.log(this.filteredRestaurants);
             this.activeType = true;
-            console.log(this.activeType);
-            
+            console.log(this.activeType);           
+        },
+        nameSearch() {
+            this.filteredRestaurants = [];
+            this.nameRestaurant = this.nameRestaurant.toLowerCase().trim();
+            for(let i=0; i < this.restaurants.length; i++ ) {
+                if(this.restaurants[i].nameRestaurant.toLowerCase().includes(this.nameRestaurant)) {
+                    if(!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
+                        this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                    } 
+                                       
+                }
+
+            }
+            console.log(this.filteredRestaurants);
+
         }
 
     },
