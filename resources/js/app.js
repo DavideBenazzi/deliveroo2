@@ -12,11 +12,11 @@ const app = new Vue({
     data: {
         restaurants: [],
         filteredRestaurants: [],
+        secondfilteredRestaurants: [],
         types: [],
         activeType: false ,
         nameRestaurant: "" ,
         checkedType:[],
-        checkedNames:[],
 
     },
 
@@ -27,7 +27,7 @@ const app = new Vue({
             this.filteredRestaurants = [];
             for( let i=0; i < this.restaurants.length; i++) {
                 if(type == this.restaurants[i].type_id) {
-                    this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                    this.filteredRestaurants.push(this.restaurants[i]);
                 }
             }
             console.log(this.filteredRestaurants);
@@ -54,20 +54,27 @@ const app = new Vue({
 
         //funzione per ricerca ristoranti assocciati a vari tipi
         filterCheckType() {
-            this.filteredRestaurants = [];
-
-            for(let i = 0; i < this.restaurants.length ; i++){
+            for(let b = 0; b < this.filteredRestaurants.length ; b++){
+                for(let c = 0; c < this.restaurants.length; c++ ) {
+                    if(!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
+                        this.filteredRestaurants.push(this.restaurants[c])
+                    }
+                }
+            }
+                    
+        
+            for(let i = 0; i < this.filteredRestaurants.length ; i++){
                 for(let a = 0 ; a < this.checkedType.length ; a++){
-                    if(this.checkedType[a] == this.restaurants[i].type_id){
+                    if(this.checkedType[a] == this.filteredRestaurants[i].type_id){
 
-                        if(!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
-                            this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                        if(!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
+                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i].nameRestaurant);
                         }
 
                     }
                 }
             }
-            console.log(this.filteredRestaurants);
+            console.log(this.secondfilteredRestaurants);
         },
 
     },

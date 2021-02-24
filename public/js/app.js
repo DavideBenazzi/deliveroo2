@@ -49610,11 +49610,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   data: {
     restaurants: [],
     filteredRestaurants: [],
+    secondfilteredRestaurants: [],
     types: [],
     activeType: false,
     nameRestaurant: "",
-    checkedType: [],
-    checkedNames: []
+    checkedType: []
   },
   methods: {
     //funzione per ricerca ristoranti assocciati al tipo singolo
@@ -49624,7 +49624,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
 
       for (var i = 0; i < this.restaurants.length; i++) {
         if (type == this.restaurants[i].type_id) {
-          this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+          this.filteredRestaurants.push(this.restaurants[i]);
         }
       }
 
@@ -49649,19 +49649,25 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     },
     //funzione per ricerca ristoranti assocciati a vari tipi
     filterCheckType: function filterCheckType() {
-      this.filteredRestaurants = [];
+      for (var b = 0; b < this.filteredRestaurants.length; b++) {
+        for (var c = 0; c < this.restaurants.length; c++) {
+          if (!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
+            this.filteredRestaurants.push(this.restaurants[c]);
+          }
+        }
+      }
 
-      for (var i = 0; i < this.restaurants.length; i++) {
+      for (var i = 0; i < this.filteredRestaurants.length; i++) {
         for (var a = 0; a < this.checkedType.length; a++) {
-          if (this.checkedType[a] == this.restaurants[i].type_id) {
-            if (!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
-              this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+          if (this.checkedType[a] == this.filteredRestaurants[i].type_id) {
+            if (!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
+              this.secondfilteredRestaurants.push(this.filteredRestaurants[i].nameRestaurant);
             }
           }
         }
       }
 
-      console.log(this.filteredRestaurants);
+      console.log(this.secondfilteredRestaurants);
     }
   },
   created: function created() {
@@ -49751,8 +49757,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

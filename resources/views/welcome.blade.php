@@ -101,7 +101,7 @@
                 <div v-show="activeType">
                     <ul>
                         <li v-for="restaurant in filteredRestaurants">
-                            @{{ restaurant }}
+                            @{{ restaurant.nameRestaurant }}
                         </li>
                     </ul>
                 </div>
