@@ -15,6 +15,7 @@ const app = new Vue({
         secondfilteredRestaurants: [],
         types: [],
         activeType: false ,
+        activeTypes: false ,
         nameRestaurant: "" ,
         checkedType:[],
 
@@ -54,6 +55,7 @@ const app = new Vue({
 
         //funzione per ricerca ristoranti assocciati a vari tipi
         filterCheckType() {
+            this.activeType = false;
             for(let b = 0; b < this.filteredRestaurants.length ; b++){
                 for(let c = 0; c < this.restaurants.length; c++ ) {
                     if(!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
@@ -74,6 +76,7 @@ const app = new Vue({
                     }
                 }
             }
+            this.activeTypes = true;
             console.log(this.secondfilteredRestaurants);
         },
 

@@ -49613,6 +49613,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     secondfilteredRestaurants: [],
     types: [],
     activeType: false,
+    activeTypes: false,
     nameRestaurant: "",
     checkedType: []
   },
@@ -49649,6 +49650,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     },
     //funzione per ricerca ristoranti assocciati a vari tipi
     filterCheckType: function filterCheckType() {
+      this.activeType = false;
+
       for (var b = 0; b < this.filteredRestaurants.length; b++) {
         for (var c = 0; c < this.restaurants.length; c++) {
           if (!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
@@ -49667,6 +49670,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         }
       }
 
+      this.activeTypes = true;
       console.log(this.secondfilteredRestaurants);
     }
   },
@@ -49757,8 +49761,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
