@@ -49618,6 +49618,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     checkedType: []
   },
   methods: {
+    routing: function routing(id) {
+      return window.location + 'restaurants' + '/' + id;
+    },
+    advrouting: function advrouting(id) {
+      return window.location + '/' + 'restaurants' + '/' + id;
+    },
     //funzione per ricerca ristoranti assocciati al tipo singolo
     filterType: function filterType(type) {
       console.log(type);
@@ -49664,7 +49670,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         for (var a = 0; a < this.checkedType.length; a++) {
           if (this.checkedType[a] == this.filteredRestaurants[i].type_id) {
             if (!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
-              this.secondfilteredRestaurants.push(this.filteredRestaurants[i].nameRestaurant);
+              this.secondfilteredRestaurants.push(this.filteredRestaurants[i]);
             }
           }
         }
@@ -49761,8 +49767,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/alfredodiforti/Documents/deliveroo2/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

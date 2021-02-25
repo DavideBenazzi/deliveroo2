@@ -22,6 +22,13 @@ const app = new Vue({
     },
 
     methods : {
+
+        routing(id){
+            return window.location + 'restaurants' + '/' + id ;
+        },
+        advrouting(id){
+            return window.location + '/' + 'restaurants' + '/' + id ;
+        },
         //funzione per ricerca ristoranti assocciati al tipo singolo
         filterType(type) {
             console.log(type);
@@ -70,7 +77,7 @@ const app = new Vue({
                     if(this.checkedType[a] == this.filteredRestaurants[i].type_id){
 
                         if(!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
-                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i].nameRestaurant);
+                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i]);
                         }
 
                     }

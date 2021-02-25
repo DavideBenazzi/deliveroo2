@@ -17,9 +17,9 @@
     </ul>
     <div v-show="activeType">
         <ul>
-            <li v-for="restaurant in filteredRestaurants">
-                <a href="">
-                    @{{ restaurant.nameRestaurant }}
+            <li v-for="restaurants in filteredRestaurants">
+                <a :href="routing(restaurants.user_id)">
+                    @{{ restaurants.nameRestaurant }}
                 </a>
             </li>
         </ul>
@@ -27,9 +27,7 @@
 
     
 
-</section>
-
-    
+</section>    
 @endsection
 
             
