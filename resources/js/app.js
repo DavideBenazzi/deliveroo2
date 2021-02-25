@@ -18,6 +18,7 @@ const app = new Vue({
         activeTypes: false ,
         nameRestaurant: "" ,
         checkedType:[],
+        checkedPlate:[],
 
     },
 

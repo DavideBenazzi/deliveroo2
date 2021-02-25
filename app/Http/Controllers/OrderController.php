@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Plate;
-use Illuminate\Support\Facades\DB;
+use App\Order;
 
-class RestaurantController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +35,17 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->all();
+        dd($data);
+        $newOrder = new Order();
+        $newOrder->fill($data);
+
+        $saved = $newOrder->save();
+
+        if($saved){
+            return redirect()->route('advancedResearch');
+        }
     }
 
     /**
@@ -46,11 +54,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($user_id)
+    public function show($id)
     {
-        $restaurant = User::where('id' , $user_id)->first();
-        $plate = DB::table('plates')->where('user_id' , $user_id)->get();
-        return view('restaurants.show', compact('restaurant' , 'plate'));
+        //
     }
 
     /**
@@ -87,4 +93,3 @@ class RestaurantController extends Controller
         //
     }
 }
-
