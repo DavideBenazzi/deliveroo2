@@ -1,8 +1,30 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+
+// Partials
+@import 'partials/flex-commons';
+@import 'partials/spacing-commons';
+@import 'partials/positions-commons';
+@import 'partials/palette-colors';
+@import 'partials/fonts';
+@import 'partials/variables';
+
+// partials page
+@import 'pages/partials/main-commons';
+@import 'pages/partials/footer';
+
+
+// Pages
+@import 'pages/main';
+@import 'pages/welcome';
+@import 'pages/advancedResearch';
+@import 'pages/dashboard';
+@import 'pages/login';
+@import 'pages/register';
+
+

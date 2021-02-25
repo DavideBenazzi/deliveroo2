@@ -1,0 +1,22 @@
+$palette: #08080e, #3e414a, #fedc18, #ff9e2b, #df5200;
+
+@function palette($color) {
+    @return nth($palette, $color)
+};
+
+// primary color for texts
+$primary-color: #f7f7ff;
+
+
+// main colors
+$dark: #0d0d15;
+$gray: #3e414a;
+$yellow: #fedc18;
+$orange: #ff9e2b;
+$big-orange: #df5200;
+
+// secondary colors 
+$green: #05b356;
+$blue: #2a9fd4;
+
+

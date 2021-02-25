@@ -5,9 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" 
+                {{-- style in html colore --}}
+                style="background-color: #1d170d;">{{ __('Register') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" 
+                {{-- style in html colore --}}
+                style="background-color: #1d170d;">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group row">

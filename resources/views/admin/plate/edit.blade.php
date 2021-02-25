@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container" 
+        style="background-color: #1d170d;">
         <h1 class="pt-3 pb-3 text-center">Edite your dish</h1>
 
         @if ($errors->any())

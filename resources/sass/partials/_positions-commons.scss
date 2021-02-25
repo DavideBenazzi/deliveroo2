@@ -1,0 +1,40 @@
+@mixin absolute-center($position) {
+    position: absolute;
+
+    @if $position == 'vertical' {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if $position == 'horizontal' {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $position == 'both' {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+// basic position classes
+
+.p-relative {
+    position: relative;
+}
+.p-absolute {
+    position: absolute;
+}
+
+.p-fixed {
+    position: fixed;
+}
+
+// z-index variables
+
+@each $z in 0, 1, 2 {
+    // margins
+    .z-index-#{$z} {
+        z-index: $z;
+    }
+}

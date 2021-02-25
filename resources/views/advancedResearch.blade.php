@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
-            <section id="app">
+            <section id="app" 
+                style="background-color: #1d170d;">
                 <h2>Advanced Research</h2>
                 <div class="cerca">
                     <input type="search" @keyup.enter="nameSearch" v-model="nameRestaurant" placeholder="Inserisci il nome del ristorante" name="" value="">

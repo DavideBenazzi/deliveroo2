@@ -1,0 +1,29 @@
+@each $size in 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 {
+    // margins
+    .mt-#{$size} {
+        margin-top: $size + 0rem;
+    }
+    .mb-#{$size} {
+        margin-bottom: $size + 0rem;
+    }
+    .ml-#{$size} {
+        margin-left: $size + 0rem;
+    }
+    .mr-#{$size} {
+        margin-right: $size + 0rem;
+    }
+
+    // paddings
+    .pt-#{$size} {
+        padding-top: $size + 0rem;
+    }
+    .pb-#{$size} {
+        padding-bottom: $size + 0rem;
+    }
+    .pl-#{$size} {
+        padding-left: $size + 0rem;
+    }
+    .pr-#{$size} {
+        padding-right: $size + 0rem;
+    }
+}

@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="container" 
+    style="background-color: #1d170d;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>{{$user->nameRestaurant}}</h1>
