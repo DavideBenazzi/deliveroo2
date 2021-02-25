@@ -15,12 +15,21 @@ const app = new Vue({
         secondfilteredRestaurants: [],
         types: [],
         activeType: false ,
+        activeTypes: false ,
         nameRestaurant: "" ,
         checkedType:[],
+        checkedPlate:[],
 
     },
 
     methods : {
+
+        routing(id){
+            return window.location + 'restaurants' + '/' + id ;
+        },
+        advrouting(id){
+            return window.location + '/' + 'restaurants' + '/' + id ;
+        },
         //funzione per ricerca ristoranti assocciati al tipo singolo
         filterType(type) {
             console.log(type);
@@ -54,6 +63,7 @@ const app = new Vue({
 
         //funzione per ricerca ristoranti assocciati a vari tipi
         filterCheckType() {
+            this.activeType = false;
             for(let b = 0; b < this.filteredRestaurants.length ; b++){
                 for(let c = 0; c < this.restaurants.length; c++ ) {
                     if(!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
@@ -68,12 +78,13 @@ const app = new Vue({
                     if(this.checkedType[a] == this.filteredRestaurants[i].type_id){
 
                         if(!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
-                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i].nameRestaurant);
+                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i]);
                         }
 
                     }
                 }
             }
+            this.activeTypes = true;
             console.log(this.secondfilteredRestaurants);
         },
 

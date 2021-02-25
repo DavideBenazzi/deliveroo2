@@ -15,8 +15,19 @@
                 </ul>
                 <div v-show="activeType">
                     <ul>
-                        <li v-for="restaurant in secondfilteredRestaurants">
-                            @{{ secondfilteredRestaurants }}
+                        <li v-for="restaurants in filteredRestaurants">
+                            <a :href="advrouting(restaurants.user_id)">
+                                @{{ restaurants.nameRestaurant }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div v-show="activeTypes">
+                    <ul>
+                        <li v-for='restaurants in secondfilteredRestaurants'>
+                            <a :href="advrouting(restaurants.user_id)">
+                                @{{ restaurants.nameRestaurant }}
+                            </a>
                         </li>
                     </ul>
                 </div>
