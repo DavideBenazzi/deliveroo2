@@ -25,7 +25,7 @@
                 <div v-show="activeType">
                     <ul class="d-flex wrap">
                         <li v-for="restaurants in filteredRestaurants">
-                            <a href="routing(restaurants.user_id)">
+                            <a :href="routing(restaurants.user_id)">
                                 @{{ restaurants.nameRestaurant }}
                             </a>
                         </li>

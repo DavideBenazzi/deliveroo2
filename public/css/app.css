@@ -10489,7 +10489,8 @@ main button {
   box-shadow: none;
 }
 main .jumbo-section {
-  background-image: url(./public/images/jumbotron.jpg);
+  background-image: url("./public/img/jumbotron.jpg");
+  background-color: red;
   background-size: 100%;
   background-size: cover;
   background-position-y: 90%;
