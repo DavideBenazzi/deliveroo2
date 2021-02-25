@@ -7,8 +7,8 @@
             {{-- logo section --}}
             <div class="logo-container d-flex just-center">
                 <h1 id="logo">
-                    D E L I V E R B O O 
-                </h1>                      
+                    D E L I V E R B O O
+                </h1>
             </div>
 
             {{-- our types --}}
@@ -18,15 +18,15 @@
                 {{-- types list --}}
                 <ul class="type-list-fade d-inline-flex wrap ul-nostyle just-between just-around">
                     <li class="type-item ml-2" v-for="type in types" v-on:click="filterType(type.id)">
-                        <h4>@{{ type.name }}</h4>                     
+                        <h4>@{{ type.name }}</h4>
                     </li>
                 </ul>
                 {{-- restaurants search list --}}
                 <div v-show="activeType">
                     <ul class="d-flex wrap">
-                        <li v-for="restaurant in filteredRestaurants">
+                        <li v-for="restaurants in filteredRestaurants">
                             <a href="routing(restaurants.user_id)">
-                                @{{ restaurant.nameRestaurant }}
+                                @{{ restaurants.nameRestaurant }}
                             </a>
                         </li>
                     </ul>
@@ -40,11 +40,11 @@
         </div>
     </section>
 
-    
+
 
 {{-- </section> --}}
 
-    
+
 @endsection
 
-            
+

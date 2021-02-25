@@ -10,9 +10,9 @@ main {
         border: none;
         box-shadow: none;
     }
-    
+
     .jumbo-section {
-        background-image: url(./public/img/jumbotron.jpg);
+        background-image: url(./public/images/jumbotron.jpg);
         background-size: 100%;
         background-size: cover;
         background-position-y: 90%;
@@ -24,7 +24,7 @@ main {
             height: 100%;
 
         }
-        
+
         #logo {
             // font-family: $secondary-font;
             font-size: font-size(7);
@@ -37,25 +37,25 @@ main {
                 // color: $primary-color;
             }
         }
-        
+
         // effetto fade hover
-        .type-list-fade > * { 
+        .type-list-fade > * {
             visibility: visible;
         }
         /* Brings the child items back in, even though the parent is `hidden` */
 
-        .type-list-fade > * { 
-            transition: opacity 180ms linear 100ms, background-color 180ms linear 100ms, border-radius 150ms linear 90ms; 
+        .type-list-fade > * {
+            transition: opacity 180ms linear 100ms, background-color 180ms linear 100ms, border-radius 150ms linear 90ms;
         }
         /* Makes the fades smooth */
 
-        .type-list-fade:hover > * { 
-            opacity: 0.5; 
+        .type-list-fade:hover > * {
+            opacity: 0.5;
         }
         /* Fade out all items when the parent is hovered */
 
-        .type-list-fade > *:hover { 
-            opacity: 1; transition-delay: 0ms; 
+        .type-list-fade > *:hover {
+            opacity: 1; transition-delay: 0ms;
         }
         /* Fade in the currently hovered item */
 
@@ -63,7 +63,7 @@ main {
             background-color: none;
             font-weight: 700;
             padding: 10px;
-            
+
             &:hover {
                 cursor: pointer;
                 background-color: rgba(204, 148, 111, 0.5);
@@ -73,9 +73,9 @@ main {
         }
     }
 
-    
+
     // .logo-container {
-        
+
     //     // button a {
     //         //     // position: absolute;
     //         // }
