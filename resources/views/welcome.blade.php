@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- <section id="app"> --}}
-    <section class="jumbo-section">
+    <section class="jumbo-section" style="background-image: url('{{ asset('./img/jumbotron.jpg')}}')">
         <div class="main-section container d-flex flex-col just-around">
             {{-- logo section --}}
             <div class="logo-container d-flex just-center">

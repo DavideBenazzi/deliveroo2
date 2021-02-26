@@ -7,15 +7,21 @@
     <section id='app'>
         {{-- Elenco dei piatti --}}
         @foreach ($plate as $item)
-            <h1>{{ $item->name}}</h1>
-            <input type="checkbox" v-on:change="" id="{{$item->id}}" value="{{$item->name}}" v-model="checkedPlate">
-            <label for="{{$item->id}}">{{ $item->name }}</label>
-            <img src="{{ asset('storage/' . $item->photo ) }}" alt="{{ $item->name }}">
+            <div>
+                <h1>Nome del piatto : {{ $item->name}}</h1>
+                <h3>Prezzo : {{ $item->price}} €</h3>
+                <img src="{{ asset('storage/' . $item->photo ) }}" alt="{{ $item->name }}">
+                <p>Descrizione : {{ $item->description }}</p>
+                <p>Allergeni : {{ $item->allergenic }}</p>
+                <p>Ingredienti : {{ $item->ingredients }}</p>
+                <input type="checkbox" v-on:change="checkChart" id="{{$item->id}}" value="{{$item->id}}" v-model="checkedPlate">
+                <label for="{{$item->id}}">Aggiungi al carrello : {{ $item->name }}</label>
+            </div>
         @endforeach
         <ul>
-            <h1>Orders</h1>
-            <li v-for="plate in checkedPlate">
-                <h3>@{{ plate }}</h3>
+            <h1>Carrello</h1>
+            <li v-for="plate in orderedPlates">
+                <h3>@{{ plate.name }}</h3>
             </li>
         </ul>
         <form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data">
@@ -25,8 +31,8 @@
                 <div class="form-group">
                     <ul>
                         <label for="order">Order</label>
-                        <li v-for="(plate , index) in checkedPlate">
-                            <input class="form-control" type="text" :name="index" id="order" :value="plate">
+                        <li v-for="(plate , index) in orderedPlates">
+                            <input class="form-control" type="text" :name="index" id="order" :value="plate.name">
                         </li>
                     </ul>
                 </div>

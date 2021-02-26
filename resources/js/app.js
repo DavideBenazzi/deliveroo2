@@ -18,11 +18,28 @@ const app = new Vue({
         activeTypes: false ,
         nameRestaurant: "" ,
         checkedType:[],
+        //variabili relative all'ordine
         checkedPlate:[],
+        plates:[],
+        orderedPlates: [],
 
     },
 
     methods : {
+
+        //Funzione al change della pagina di dettaglio dell'user riferita all'ordine
+        checkChart() {
+            this.orderedPlates = [];
+
+            for( let i = 0; i < this.checkedPlate.length; i++) {
+                for( let c = 0; c < this.plates.length; c++) {
+                    if(this.checkedPlate[i] == this.plates[c].id) {
+                        this.orderedPlates.push(this.plates[c]);
+                    }
+                }
+            }
+            console.log(this.orderedPlates);
+        },
 
         routing(id){
             return window.location + 'restaurants' + '/' + id ;
@@ -112,6 +129,17 @@ const app = new Vue({
         .catch(error => {
             // handle error
             console.log(error);
+        });
+        axios
+        .get("http://127.0.0.1:8000/api/plates")
+        .then(response => {
+        // handle success
+        console.log(response.data);
+        this.plates = response.data;
+        })
+        .catch(error => {
+        // handle error
+        console.log(error);
         });
     }
 
