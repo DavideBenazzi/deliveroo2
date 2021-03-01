@@ -28,9 +28,9 @@
                 {{-- print name restaurant that have all categories checked --}}
                 <div v-show="typesActive">
                     <ul>
-                        <li v-for='restaurants in secondfilteredRestaurants'>
+                        <li v-for='restaurants in finalFiltered'>
                             <a :href="advrouting(restaurants.user_id)">
-                                @{{ restaurants }}
+                                @{{ restaurants.nameRestaurant }}
                             </a>
                         </li>
                     </ul>

@@ -25,6 +25,7 @@ const app = new Vue({
         typesActive:false,
         nameRestaurant: "" ,
         checkedType:[],
+        finalFiltered:[],
         //variabili per type scelti e ristoranti ridondanti all'interno del array restFiltered
         nTypeChecked:0,
         nRestChecked:1,
@@ -91,7 +92,8 @@ const app = new Vue({
 
         //funzione per ricerca ristoranti assocciati a vari tipi
         filterCheckType() {
-
+            this.finalFiltered= [],
+            this.filteredRestaurants = [],
             this.secondfilteredRestaurants = [];
             this.restFiltered = [];
             this.nTypeChecked = this.checkedType.length;
@@ -104,8 +106,10 @@ const app = new Vue({
                         if(this.checkedType[a] == this.restaurants[i].type_id){
                             //array di confronto
                             this.restFiltered.push(this.restaurants[i].nameRestaurant);
-                            //array di stampa
+                            //array di confronto 2
                             this.secondfilteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                            //array di stampa
+                            this.finalFiltered.push(this.restaurants[i]);
                         }
                     }
                 }
@@ -126,9 +130,16 @@ const app = new Vue({
                             this.nRestChecked ++;
                             //se variabile incrementata è uguale al numero di type scelto
                             if(this.nRestChecked == this.nTypeChecked){
-                                //controllo e pusho nel array finale di stampa che il nome del ristorante sia ripetuto una sola volta
+                                //controllo e pusho nel array  di controllo che il nome del ristorante sia ripetuto una sola volta
                                 if(!this.secondfilteredRestaurants.includes(this.restFiltered[b])) {
                                     this.secondfilteredRestaurants.push(this.restFiltered[b]);
+                                    //ciclo for con cui passo l'array con i nomi dei ristoranti giusti
+                                    for(let z=0; z < this.secondfilteredRestaurants.length ; z++){
+                                        //if che serve a fare in modo di passare tutto l'oggetto e non solo il nome del ristorante corretto
+                                        if(this.secondfilteredRestaurants[z] == this.restaurants[i].nameRestaurant){
+                                            this.finalFiltered.push(this.restaurants[i]);
+                                        }
+                                    }
                                 }
                             }
                         }else{
@@ -143,6 +154,7 @@ const app = new Vue({
             console.log(this.restFiltered);
             console.log(this.nRestChecked);
             console.log(this.secondfilteredRestaurants);
+            console.log(this.finalFiltered);
         },
 
     },
