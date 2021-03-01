@@ -10582,13 +10582,13 @@ main .jumbo-section .type-item:hover {
 
 .auth-color {
   background-color: #50525a;
+  overflow-y: auto;
 }
 .auth-color .auth-card {
   margin-top: 5%;
   margin-bottom: 2%;
   font-family: "Jura", sans-serif;
   background-color: #3e414a;
-  overflow-y: scroll;
 }
 .auth-color .auth-card a {
   color: #df5200;
@@ -10623,22 +10623,47 @@ main .jumbo-section .type-item:hover {
 }
 
 .create-edit {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   background-color: #3e414a;
   padding: 40px;
   border-radius: 3% 3% 0% 0%;
 }
+.create-edit .medium {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.create-edit .slim {
+  margin-left: 5%;
+  width: 10%;
+}
+
+.alert {
+  background-color: #df5200;
+}
+
+.show-plate {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #3e414a;
+  padding: 40px;
+  border-radius: 5% 5% 0% 0%;
+}
+.show-plate .tre-button {
+  width: 80%;
+  margin: 0 auto;
+}
 
 .auth-color {
   background-color: #50525a;
+  overflow-y: auto;
 }
 .auth-color .auth-card {
   margin-top: 5%;
   margin-bottom: 2%;
   font-family: "Jura", sans-serif;
   background-color: #3e414a;
-  overflow-y: scroll;
 }
 .auth-color .auth-card a {
   color: #df5200;

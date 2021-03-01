@@ -6,7 +6,7 @@
         <h1 class="pt-3 pb-3 text-center">Insert new dish</h1>
 
         @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>
@@ -21,37 +21,37 @@
             @csrf
             @method('POST')
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <label for="name">Dish Name</label>
                     <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <label for="description">Description</label>
                     <textarea class="form-control" name="description" id="description"> {{ old('description') }}</textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group slim">
                     <label class="width-auto" for="price">Price</label>
                     <input class="form-control" type="number" name="price" id="price" value="{{ old('price') }}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <label for="photo">Photo</label>
                     <input class="form-control" type="file" name="photo" id="photo" accept="photo/*">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <label for="allergenic">Allerginic</label>
                     <input class="form-control" type="text" name="allergenic" id="allergenic" value="{{ old('allergenic') }}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <label for="ingredients">Ingredients</label>
                     <input class="form-control" type="text" name="ingredients" id="ingredients" value="{{ old('ingredients') }}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group medium">
                     <p>Visibility:</p>
                     <input type="radio" id="1" name="visibility" value="1">
                     <label for="1">Yes</label><br>

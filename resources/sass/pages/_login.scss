@@ -2,12 +2,13 @@
 // autenticazione
 .auth-color{
     background-color:  #50525a;
+    overflow-y: auto;
     .auth-card{
         margin-top: 5%;
         margin-bottom: 2%;
         font-family: $primary-font;
         background-color: $gray;
-        overflow-y: scroll;
+        //overflow-y: scroll;
         a{
             color: $big-orange;
         }
