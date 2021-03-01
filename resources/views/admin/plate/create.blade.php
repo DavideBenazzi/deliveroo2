@@ -2,8 +2,7 @@
 
 @section('content')
 
-    <div class="container"  
-        style="background-color: #1d170d;">
+    <div class="main-section sfondo-auth">
         <h1 class="pt-3 pb-3 text-center">Insert new dish</h1>
 
         @if ($errors->any())
@@ -18,7 +17,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.plate.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="create-edit" action="{{ route('admin.plate.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
 
@@ -33,7 +32,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Price</label>
+                    <label class="width-auto" for="price">Price</label>
                     <input class="form-control" type="number" name="price" id="price" value="{{ old('price') }}">
                 </div>
 
@@ -60,12 +59,13 @@
                     <label for="0">No</label><br>
                 </div>
 
-                <div class="form-group d-flex justify-content-center pt-3 ">
-                    <input class="btn btn-warning" type="submit" value="Add">
+                <div class="form-group d-flex justify-content-center">
+                    <input class="prime-button text-decoration-none" type="submit" value="Add">
                 </div>
 
-
-                <a href="{{route('admin.plate.index')}}">Ritorno Lista </a>
+                <div class="link d-flex">
+                    <a href="{{route('admin.plate.index')}}">Back to MENU <i class="fas fa-utensils"></i></a>
+                </div>
             </form>
         </div>
 @endsection

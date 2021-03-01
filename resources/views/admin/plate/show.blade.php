@@ -5,7 +5,7 @@
     <div  style="background-color: #1d170d;">
         <div class="text-center">
 
-            <div class="container">
+            <div class="container" style="background-color: #1d170d;">
                 <h1 class="pt-4">{{$plate->name}}</h1>
                 @if (!empty($plate->photo))
                     <img class="mb-3" width="400" src="{{asset('storage/' . $plate->photo)}}" alt="{{$plate->name}}">

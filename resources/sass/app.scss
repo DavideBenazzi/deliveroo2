@@ -13,6 +13,7 @@
 @import 'partials/palette-colors';
 @import 'partials/fonts';
 @import 'partials/variables';
+@import 'partials/buttons';
 
 // partials page
 @import 'pages/partials/main-commons';
@@ -26,5 +27,9 @@
 @import 'pages/dashboard';
 @import 'pages/login';
 @import 'pages/register';
+@import 'pages/indexMenu';
+@import 'pages/createEdit';
 
 
+//Auth Pages
+@import 'pages/login';

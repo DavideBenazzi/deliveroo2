@@ -1,17 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="main-section auth-color">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" 
-                {{-- style in html colore --}}
-                style="background-color: #1d170d;">{{ __('Register') }}</div>
+            <div class="auth-card d-flex">
+                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body" 
-                {{-- style in html colore --}}
-                style="background-color: #1d170d;">
+                <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group row">
@@ -121,19 +117,20 @@
                         </div>
 
                         {{-- Form dei tipi --}}
-                        <div class='form-group'>
+
+                        <div class='form-group types-form row just-between'>
                             @foreach ($types as $type)
-                                <div class='form-check'>
+                                <div class='form-check register'>
                                     <input type="checkbox" class='form-check-input' name='types[]' id='type-{{$type->id}}' value="{{$type->id}}">
                                     <label for="type-{{$type->id}}">{{$type->name}}</label>
-                                </div>   
+                                </div>
                             @endforeach
                         </div>
 
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0 just-center">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="prime-button">
                                     {{ __('Register') }}
                                 </button>
                             </div>

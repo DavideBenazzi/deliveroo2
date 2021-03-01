@@ -11,13 +11,23 @@ const app = new Vue({
     el: '#app',
     data: {
         restaurants: [],
+        //ricerca per nome e tipologia singola
         filteredRestaurants: [],
+        //ricerca a più tipologie
+        restFiltered:[],
         secondfilteredRestaurants: [],
         types: [],
-        activeType: false ,
-        activeTypes: false ,
+        //ricerca per tipologia singola(homepage)
+        activeType: false,
+        //ricerca per nome del ristorante(advancedResearch)
+        nameActive: false,
+        //ricerca per tipologie multiple con checkbox(advancedResearch)
+        typesActive:false,
         nameRestaurant: "" ,
         checkedType:[],
+        //variabili per type scelti e ristoranti ridondanti all'interno del array restFiltered
+        nTypeChecked:0,
+        nRestChecked:1,
         checkedPlate:[],
 
     },
@@ -57,34 +67,64 @@ const app = new Vue({
                 }
 
             }
+            this.nameActive=true;
             console.log(this.filteredRestaurants);
         },
 
 
         //funzione per ricerca ristoranti assocciati a vari tipi
         filterCheckType() {
-            this.activeType = false;
-            for(let b = 0; b < this.filteredRestaurants.length ; b++){
-                for(let c = 0; c < this.restaurants.length; c++ ) {
-                    if(!this.filteredRestaurants.includes(this.restaurants[c]) && this.restaurants[c].nameRestaurant == this.filteredRestaurants[b].nameRestaurant) {
-                        this.filteredRestaurants.push(this.restaurants[c])
-                    }
-                }
-            }
-                    
-        
-            for(let i = 0; i < this.filteredRestaurants.length ; i++){
-                for(let a = 0 ; a < this.checkedType.length ; a++){
-                    if(this.checkedType[a] == this.filteredRestaurants[i].type_id){
 
-                        if(!this.secondfilteredRestaurants.includes(this.filteredRestaurants[i].nameRestaurant)) {
-                            this.secondfilteredRestaurants.push(this.filteredRestaurants[i]);
+            this.secondfilteredRestaurants = [];
+            this.restFiltered = [];
+            this.nTypeChecked = this.checkedType.length;
+            //se le tipologie scelte sono meno di due entro
+            if(this.nTypeChecked  < 2){
+                //ciclo su restaurant e checked type per trovare corrispondenza trai i type id
+                for(let i = 0; i < this.restaurants.length ; i++){
+                    for(let a = 0 ; a < this.checkedType.length ; a++){
+                        //se hanno stesso type_id pusho nel array
+                        if(this.checkedType[a] == this.restaurants[i].type_id){
+                            //array di confronto
+                            this.restFiltered.push(this.restaurants[i].nameRestaurant);
+                            //array di stampa
+                            this.secondfilteredRestaurants.push(this.restaurants[i].nameRestaurant);
                         }
-
+                    }
+                }
+                //entro se le tipologie sono due o +
+            }else{
+                //ciclo uguale al precedente per popolare l'array con nomi ridondanti
+                for(let i = 0; i < this.restaurants.length ; i++){
+                    for(let a = 0 ; a < this.checkedType.length ; a++){
+                        if(this.checkedType[a] == this.restaurants[i].type_id){
+                            this.restFiltered.push(this.restaurants[i].nameRestaurant);
+                        }
+                    }
+                    //ciclo su ristoranti già filtrati
+                    for(let b = 0; b < this.restFiltered.length ; b++ ){
+                        //se il ristorante con indice b è uguale a quello precedente (b-1)
+                        if(this.restFiltered[b] == this.restFiltered[b-1]){
+                            //incremento variabile che parte già di base uguale a 1
+                            this.nRestChecked ++;
+                            //se variabile incrementata è uguale al numero di type scelto
+                            if(this.nRestChecked == this.nTypeChecked){
+                                //controllo e pusho nel array finale di stampa che il nome del ristorante sia ripetuto una sola volta
+                                if(!this.secondfilteredRestaurants.includes(this.restFiltered[b])) {
+                                    this.secondfilteredRestaurants.push(this.restFiltered[b]);
+                                }
+                            }
+                        }else{
+                            //rimetto la variabile di confronto al valore iniziale di 1
+                            this.nRestChecked = 1;
+                        }
                     }
                 }
             }
-            this.activeTypes = true;
+            this.typesActive=true;
+            console.log(this.nTypeChecked);
+            console.log(this.restFiltered);
+            console.log(this.nRestChecked);
             console.log(this.secondfilteredRestaurants);
         },
 
