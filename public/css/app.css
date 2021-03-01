@@ -10489,7 +10489,6 @@ main button {
   box-shadow: none;
 }
 main .jumbo-section {
-  background-image: url("/img/jumbotron.jpg");
   background-size: 100%;
   background-size: cover;
   background-position-y: 90%;
@@ -10507,10 +10506,14 @@ main .jumbo-section .main-section {
 }
 main .jumbo-section #logo {
   font-size: 46px;
+  font-family: "Fredericka the Great", cursive;
   font-weight: 700;
 }
 main .jumbo-section #logo:hover {
   cursor: default;
+}
+main .jumbo-section .type-list-fade {
+  visibility: visible;
 }
 main .jumbo-section .type-list-fade > * {
   visibility: visible;
@@ -10534,4 +10537,44 @@ main .jumbo-section .type-item:hover {
   cursor: pointer;
   background-color: rgba(204, 148, 111, 0.5);
   border-radius: 5px;
+}
+main .jumbo-section #advancedSearch-box .icon-box,
+main .jumbo-section #advancedSearch-box .hover-icon {
+  font-size: 31px;
+  color: #f7f7ff;
+}
+main .jumbo-section #advancedSearch-box .hover-icon {
+  overflow: hidden;
+  width: 0;
+  position: absolute;
+  left: 40px;
+  top: 0;
+  transition: width 0.8s ease-in-out;
+  white-space: nowrap;
+}
+main .jumbo-section #advancedSearch-box #slide-right {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+main .jumbo-section #advancedSearch-box .icon-box {
+  overflow: hidden;
+  width: 50px;
+  opacity: 1;
+  transition: width 0.6s ease-in-out, opacity 0.4s ease-in-out;
+}
+main .jumbo-section #advancedSearch-box .icon-box a:hover {
+  opacity: 1;
+}
+main .jumbo-section #advancedSearch-box .wrapper {
+  position: relative;
+}
+main .jumbo-section #advancedSearch-box .wrapper:hover .hover-icon {
+  width: 100%;
+}
+main .jumbo-section #advancedSearch-box .wrapper:hover #slide-right {
+  opacity: 1;
+}
+main .jumbo-section #advancedSearch-box .wrapper:hover .icon-box {
+  width: 0%;
+  opacity: 0.3;
 }
