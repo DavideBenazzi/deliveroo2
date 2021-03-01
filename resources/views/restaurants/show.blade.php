@@ -4,7 +4,7 @@
 <h1>{{ $restaurant->nameRestaurant}}</h1>
 
     {{-- Istanza Vue --}}
-    <section id='app'>
+    <section id='app' style="background-color: #000">
         {{-- Elenco dei piatti --}}
         @foreach ($plate as $item)
             <div>
@@ -17,22 +17,23 @@
                 <input type="checkbox" v-on:change="checkChart" id="{{$item->id}}" value="{{$item->id}}" v-model="checkedPlate">
                 <label for="{{$item->id}}">Aggiungi al carrello : {{ $item->name }}</label>
             </div>
-        @endforeach
-        <ul>
-            <h1>Carrello</h1>
-            <li v-for="plate in orderedPlates">
-                <h3>@{{ plate.name }}</h3>
-            </li>
-        </ul>
-        <form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('POST')   
-
+            @endforeach
+            <form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')   
+                
+                <ul>
+                    <h1>Carrello</h1>
+                    {{-- <li v-for="plate in orderedPlates">
+                        <h3>@{{ plate.name }}</h3>
+                    </li> --}}
+                </ul>
                 <div class="form-group">
                     <ul>
-                        <label for="order">Order</label>
                         <li v-for="(plate , index) in orderedPlates">
-                            <input class="form-control" type="text" :name="index" id="order" :value="plate.name">
+                            <label :for="plate.name">Order</label>
+                            <input class="form-control" type="text" name="plateName[]" :id="plate.name" :value="plate.name">
+                            <input class="form-control" type="number" name="quantity[]" :id="plate.name" value="0">
                         </li>
                     </ul>
                 </div>
