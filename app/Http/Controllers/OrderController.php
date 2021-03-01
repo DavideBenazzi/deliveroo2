@@ -35,13 +35,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $plateOrdered = [];
+        $quantity = [];
+
 
         $data = $request->all();
-        dd($data);
-        $newOrder = new Order();
-        $newOrder->fill($data);
-
-        $saved = $newOrder->save();
+        $plateOrdered = $data['plateName'];
+        $quantity = $data['quantity'];
+        // dd($quantity);
+        for($i = 0; $i < COUNT($plateOrdered); $i++) {
+            $newOrder = new Order();
+            $newOrder->fill($data);
+            $newOrder->fill(['order' => $plateOrdered[$i]]);
+            $newOrder->fill(['quantity' => $quantity[$i]]);
+            $saved = $newOrder->save();
+        }   
 
         if($saved){
             return redirect()->route('advancedResearch');

@@ -49626,9 +49626,26 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     //variabili per type scelti e ristoranti ridondanti all'interno del array restFiltered
     nTypeChecked: 0,
     nRestChecked: 1,
-    checkedPlate: []
+    //variabili relative all'ordine
+    plates: [],
+    orderedPlates: []
+    checkedPlate: [],
   },
   methods: {
+    //Funzione al change della pagina di dettaglio dell'user riferita all'ordine
+    checkChart: function checkChart() {
+      this.orderedPlates = [];
+
+      for (var i = 0; i < this.checkedPlate.length; i++) {
+        for (var c = 0; c < this.plates.length; c++) {
+          if (this.checkedPlate[i] == this.plates[c].id) {
+            this.orderedPlates.push(this.plates[c]);
+          }
+        }
+      }
+
+      console.log(this.orderedPlates);
+    },
     routing: function routing(id) {
       return window.location + 'restaurants' + '/' + id;
     },
@@ -49742,6 +49759,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       // handle error
       console.log(error);
     });
+    axios.get("http://127.0.0.1:8000/api/plates").then(function (response) {
+      // handle success
+      console.log(response.data);
+      _this.plates = response.data;
+    })["catch"](function (error) {
+      // handle error
+      console.log(error);
+    });
   }
 });
 
@@ -49810,8 +49835,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Boolean_Esercizi\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
