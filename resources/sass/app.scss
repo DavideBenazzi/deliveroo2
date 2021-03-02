@@ -13,6 +13,7 @@
 @import 'partials/palette-colors';
 @import 'partials/fonts';
 @import 'partials/variables';
+@import 'partials/buttons';
 
 // partials page
 @import 'pages/partials/main-commons';
@@ -27,5 +28,10 @@
 @import 'pages/login';
 @import 'pages/register';
 @import 'pages/mediaquery/welcome-mediaq';
+@import 'pages/indexMenu';
+@import 'pages/createEdit';
+@import 'pages/showPlate';
 
 
+//Auth Pages
+@import 'pages/login';

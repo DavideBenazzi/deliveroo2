@@ -1,0 +1,19 @@
+.create-edit{
+    width: 60%;
+    margin: 0 auto;
+    background-color: $gray;
+    padding: 40px;
+    border-radius: 3% 3% 0% 0%;
+    .medium{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .slim{
+        margin-left: 5%;
+        width:10%;
+    }
+}
+.alert{
+    background-color: $big-orange;
+}

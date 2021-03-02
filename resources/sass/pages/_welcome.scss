@@ -35,6 +35,9 @@ main {
         object-fit: cover;
         height: 100%;
 
+        .main-section {
+            height: 100%;
+        }
         .blur-mask {
             width: 99%;
             height: 99%;

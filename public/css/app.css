@@ -10428,6 +10428,22 @@ h3 {
   color: #f7f7ff;
 }
 
+.prime-button {
+  background-color: #e1804f;
+  color: #f7f7ff;
+  padding: 5px 5px;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+}
+.prime-button:hover {
+  color: #3e414a;
+}
+.prime-button:active {
+  background-color: #3e414a;
+  color: #df5200;
+}
+
 main {
   flex-grow: 1;
 }
@@ -10447,6 +10463,7 @@ main .main-section {
   box-sizing: border-box;
   margin: 0;
   color: #f7f7ff;
+  font-family: "Jura", sans-serif;
 }
 
 a {
@@ -10752,4 +10769,125 @@ main .fade-enter, main .fade-leave-to {
   main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
     opacity: 1;
   }
+}
+
+.sfondo-auth {
+  background-color: #50525a;
+}
+.sfondo-auth .dash {
+  width: 60%;
+  margin: 0 auto;
+  height: 80%;
+}
+.sfondo-auth .dash h3 {
+  font-size: 26px;
+}
+.sfondo-auth .dash * {
+  padding-bottom: 20px;
+}
+.sfondo-auth .link {
+  padding-top: 50px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+.sfondo-auth .link a i {
+  color: #df5200;
+}
+.sfondo-auth .link a:hover {
+  text-decoration: none;
+  color: #df5200;
+}
+
+.auth-color {
+  background-color: #50525a;
+  overflow-y: auto;
+}
+.auth-color .auth-card {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-family: "Jura", sans-serif;
+  background-color: #3e414a;
+}
+.auth-color .auth-card a {
+  color: #df5200;
+}
+.auth-color .auth-card .types-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.link-add i {
+  color: #df5200;
+}
+.link-add:hover {
+  color: #df5200;
+  text-decoration: none;
+}
+
+.sezione-piatti {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.plate {
+  padding: 10px;
+  border-radius: 7% 7% 0% 0%;
+  background-color: #3e414a;
+  text-align: center;
+}
+.plate img {
+  border-radius: 7% 7% 0% 0%;
+  height: 50%;
+}
+
+.create-edit {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #3e414a;
+  padding: 40px;
+  border-radius: 3% 3% 0% 0%;
+}
+.create-edit .medium {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.create-edit .slim {
+  margin-left: 5%;
+  width: 10%;
+}
+
+.alert {
+  background-color: #df5200;
+}
+
+.show-plate {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #3e414a;
+  padding: 40px;
+  border-radius: 5% 5% 0% 0%;
+}
+.show-plate .tre-button {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.auth-color {
+  background-color: #50525a;
+  overflow-y: auto;
+}
+.auth-color .auth-card {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-family: "Jura", sans-serif;
+  background-color: #3e414a;
+}
+.auth-color .auth-card a {
+  color: #df5200;
+}
+.auth-color .auth-card .types-form {
+  width: 50%;
+  margin: 0 auto;
 }

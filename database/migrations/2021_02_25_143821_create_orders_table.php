@@ -17,9 +17,10 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('address');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone' , 12);
             $table->text('order');
+            $table->unsignedSmallInteger('quantity');
             // $table->boolean('payment');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();

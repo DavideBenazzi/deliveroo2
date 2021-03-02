@@ -1,0 +1,15 @@
+.prime-button{
+    background-color: $orange;
+    color: $primary-color;
+    padding: 5px 5px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    &:hover{
+        color: $gray;
+    }
+    &:active{
+        background-color: $gray;
+        color: $big-orange;
+    }
+}

@@ -1,42 +1,39 @@
 @extends('layouts.main')
 @section('content')
-            <section id="app" 
+            <section id="app"
                 style="background-color: #1d170d;">
                 <h2>Advanced Research</h2>
+                {{-- search name restaurant --}}
                 <div class="cerca">
-                    <input type="search" @keyup.enter="nameSearch" v-model="nameRestaurant" placeholder="Inserisci il nome del ristorante" name="" value="">
+                    <input style="background-color: #1d170d;" type="search" @keyup.enter="nameSearch" v-model="nameRestaurant" placeholder="Inserisci il nome del ristorante" name="" value="">
                 </div>
-                <ul class="d-inline-flex">
-                    <li v-for="type in types">
-                        <button v-on:click="filterType(type.id)">
-                            <h4>@{{ type.name }}</h4>
-                        </button>
-                    </li>
-                </ul>
-                <div v-show="activeType">
+                {{-- print name restaurant that have search parameters --}}
+                <div v-show="nameActive">
                     <ul>
-                        <li v-for="restaurants in filteredRestaurants">
+                        <li v-for="restaurants in finalNameSearch">
                             <a :href="advrouting(restaurants.user_id)">
                                 @{{ restaurants.nameRestaurant }}
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div v-show="activeTypes">
-                    <ul>
-                        <li v-for='restaurants in secondfilteredRestaurants'>
-                            <a :href="advrouting(restaurants.user_id)">
-                                @{{ restaurants.nameRestaurant }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+
 
                 {{-- form advanced research type restaurant --}}
 
                 <div v-for="type in types">
                     <input type="checkbox" v-on:change="filterCheckType" :id="type.id" :value="type.id" v-model="checkedType">
                     <label :for="type.id">@{{ type.name }}</label>
+                </div>
+                {{-- print name restaurant that have all categories checked --}}
+                <div v-show="typesActive">
+                    <ul>
+                        <li v-for='restaurants in finalFiltered'>
+                            <a :href="advrouting(restaurants.user_id)">
+                                @{{ restaurants.nameRestaurant }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
             </section>

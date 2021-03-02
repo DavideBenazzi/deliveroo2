@@ -1,0 +1,30 @@
+.sfondo-auth{
+    background-color:  #50525a;
+    .dash{
+        width: 60%;
+        margin: 0 auto;
+        height: 80%;
+        h3{
+            font-size: 26px;
+        }
+
+        *{
+            padding-bottom: 20px;
+        }
+    }
+    .link{
+        padding-top: 50px;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        a{
+            i{
+                color: $big-orange;
+            }
+            &:hover{
+                text-decoration: none;
+                color: $big-orange;
+            }
+        }
+    }
+}
