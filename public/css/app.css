@@ -10488,6 +10488,10 @@ main button {
   border: none;
   box-shadow: none;
 }
+main .blurred {
+  background: rgba(0, 0, 0, 0.212);
+  filter: blur(5px);
+}
 main .jumbo-section {
   background-size: 100%;
   background-size: cover;
@@ -10496,47 +10500,95 @@ main .jumbo-section {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
+}
+main .jumbo-section .blur-mask {
+  width: 99%;
+  height: 99%;
   /* Brings the child items back in, even though the parent is `hidden` */
   /* Makes the fades smooth */
   /* Fade out all items when the parent is hovered */
   /* Fade in the currently hovered item */
 }
-main .jumbo-section .main-section {
-  height: 100%;
+main .jumbo-section .blur-mask .logo-container .badge {
+  position: relative;
+  width: 400px;
+  border-radius: 50%;
+  transform: rotate(-50deg);
 }
-main .jumbo-section #logo {
+main .jumbo-section .blur-mask .logo-container #logo {
   font-size: 46px;
   font-family: "Fredericka the Great", cursive;
   font-weight: 700;
 }
-main .jumbo-section #logo:hover {
+main .jumbo-section .blur-mask .logo-container #logo:hover {
   cursor: default;
 }
-main .jumbo-section .type-list-fade {
+main .jumbo-section .blur-mask .logo-container #logo span {
+  height: 200px;
+  position: absolute;
+  width: 20px;
+  left: 90px;
+  bottom: -500%;
+  transform-origin: bottom center;
+}
+main .jumbo-section .blur-mask .logo-container #logo .char1 {
+  transform: rotate(-30deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char2 {
+  transform: rotate(-5deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char3 {
+  transform: rotate(20deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char4 {
+  transform: rotate(50deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char5 {
+  transform: rotate(75deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char6 {
+  transform: rotate(100deg);
+}
+main .jumbo-section .blur-mask .logo-container #logo .char7 {
+  transform: rotate(125deg);
+}
+main .jumbo-section .blur-mask .type-list-fade {
+  visibility: visible;
+  padding-left: 0px;
+}
+main .jumbo-section .blur-mask .type-list-fade > * {
   visibility: visible;
 }
-main .jumbo-section .type-list-fade > * {
-  visibility: visible;
-}
-main .jumbo-section .type-list-fade > * {
+main .jumbo-section .blur-mask .type-list-fade > * {
   transition: opacity 180ms linear 100ms, background-color 180ms linear 100ms, border-radius 150ms linear 90ms;
 }
-main .jumbo-section .type-list-fade:hover > * {
+main .jumbo-section .blur-mask .type-list-fade:hover > * {
   opacity: 0.5;
 }
-main .jumbo-section .type-list-fade > *:hover {
+main .jumbo-section .blur-mask .type-list-fade > *:hover {
   opacity: 1;
   transition-delay: 0ms;
 }
-main .jumbo-section .type-item {
+main .jumbo-section .blur-mask .type-item {
   background-color: none;
   font-weight: 700;
   padding: 10px;
 }
-main .jumbo-section .type-item:hover {
+main .jumbo-section .blur-mask .type-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  border-bottom: 2px solid #e1804f;
+  transition: width 0.5s ease-in-out;
+}
+main .jumbo-section .blur-mask .type-item:hover {
   cursor: pointer;
-  background-color: rgba(204, 148, 111, 0.5);
-  border-radius: 5px;
+}
+main .jumbo-section .blur-mask .type-item:hover:before {
+  width: 60%;
 }
 main .jumbo-section #advancedSearch-box .icon-box,
 main .jumbo-section #advancedSearch-box .hover-icon {
@@ -10544,23 +10596,31 @@ main .jumbo-section #advancedSearch-box .hover-icon {
   color: #f7f7ff;
 }
 main .jumbo-section #advancedSearch-box .hover-icon {
+  padding-left: 30px;
+  color: #f7f7ff;
   overflow: hidden;
   width: 0;
   position: absolute;
   left: 40px;
   top: 0;
-  transition: width 0.8s ease-in-out;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
   white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 20px;
 }
 main .jumbo-section #advancedSearch-box #slide-right {
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  border: 1px solid #e1804f;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.363);
+  padding: 0px 10px;
+  transition: opacity 0.4s ease-in-out;
 }
 main .jumbo-section #advancedSearch-box .icon-box {
   overflow: hidden;
-  width: 50px;
+  width: 1000px;
   opacity: 1;
-  transition: width 0.6s ease-in-out, opacity 0.4s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 main .jumbo-section #advancedSearch-box .icon-box a:hover {
   opacity: 1;
@@ -10569,12 +10629,127 @@ main .jumbo-section #advancedSearch-box .wrapper {
   position: relative;
 }
 main .jumbo-section #advancedSearch-box .wrapper:hover .hover-icon {
-  width: 100%;
+  width: 400px;
 }
 main .jumbo-section #advancedSearch-box .wrapper:hover #slide-right {
   opacity: 1;
 }
 main .jumbo-section #advancedSearch-box .wrapper:hover .icon-box {
-  width: 0%;
-  opacity: 0.3;
+  opacity: 0;
+}
+main .jumbo-section #advancedSearch-box .wrapper:hover a {
+  text-decoration: none;
+}
+main .dark-container {
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.609);
+  width: 100%;
+  height: 100%;
+}
+main .dark-container .restaurant-list-box {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  width: 500px;
+  height: 600px;
+}
+main .dark-container .restaurant-list-box button {
+  left: 110%;
+  transform: translateX(-50%);
+  border: 2px solid #e1804f;
+  background-color: rgba(63, 63, 63, 0.431);
+  width: 90px;
+  height: 90px;
+  border-radius: 100px;
+}
+main .dark-container .restaurant-list-box button h3 {
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+main .dark-container .restaurant-list-box .restaurants-list-home {
+  padding-top: 10px;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li {
+  padding-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: border 0.4s ease-in-out;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 10px;
+  border-bottom: 2px solid #e1804f;
+  transition: width 0.5s ease-in-out;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 10px;
+  border-left: 2px solid #e1804f;
+  transition: height 0.5s ease-in-out;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li h5 {
+  padding-left: 10px;
+  font-size: 26px;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li:hover a {
+  text-decoration: none;
+  opacity: 1;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li:hover:before {
+  width: 50%;
+}
+main .dark-container .restaurant-list-box .restaurants-list-home li:hover:after {
+  height: 70%;
+}
+main .fade-enter-active, main .fade-enter-leave {
+  transition: opacity 0.5s;
+}
+main .fade-enter, main .fade-leave-to {
+  opacity: 0;
+}
+
+@media screen and (max-width: 992px) {
+  header li {
+    padding-left: 20px;
+  }
+
+  footer #logo {
+    padding-left: 20px;
+  }
+
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    width: 400px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
+  main .jumbo-section #advancedSearch-box .icon-box {
+    opacity: 0;
+  }
+  main .dark-container .restaurant-list-box button {
+    left: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .jumbo-section .blur-mask #logo {
+    font-size: 36px;
+  }
+  main .jumbo-section .blur-mask .main-section h2 {
+    font-size: 26px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    left: -5%;
+    transform: scale(0.8);
+    padding-left: 0px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
 }

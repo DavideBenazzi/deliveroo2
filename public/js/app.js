@@ -49616,7 +49616,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     activeTypes: false,
     nameRestaurant: "",
     checkedType: [],
-    checkedPlate: []
+    checkedPlate: [],
+    // status lista ristoranti
+    isHidden: false,
+    // actives
+    isActive: true
   },
   methods: {
     routing: function routing(id) {
@@ -49684,7 +49688,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   created: function created() {
     var _this = this;
 
-    axios.get("http://127.0.0.1:8000/api/restaurants").then(function (response) {
+    axios // .get("http://127.0.0.1:8000/api/restaurants")
+    .get("api/restaurants").then(function (response) {
       // handle success
       console.log(response.data);
       _this.restaurants = response.data;
@@ -49692,7 +49697,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       // handle error
       console.log(error);
     });
-    axios.get("http://127.0.0.1:8000/api/types").then(function (response) {
+    axios // .get("http://127.0.0.1:8000/api/types")
+    .get("api/types").then(function (response) {
       // handle success
       console.log(response.data);
       _this.types = response.data;
@@ -49768,8 +49774,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\deliveroo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

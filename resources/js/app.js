@@ -20,6 +20,11 @@ const app = new Vue({
         checkedType:[],
         checkedPlate:[],
 
+        // status lista ristoranti
+        isHidden: false,
+
+        // actives
+        isActive: true,
     },
 
     methods : {
@@ -91,7 +96,8 @@ const app = new Vue({
     },
     created() {
         axios
-        .get("http://127.0.0.1:8000/api/restaurants")
+        // .get("http://127.0.0.1:8000/api/restaurants")
+        .get("api/restaurants")
         .then(response => {
             // handle success
             console.log(response.data);
@@ -103,7 +109,8 @@ const app = new Vue({
         });
 
         axios
-        .get("http://127.0.0.1:8000/api/types")
+        // .get("http://127.0.0.1:8000/api/types")
+        .get("api/types")
         .then(response => {
             // handle success
             console.log(response.data);

@@ -29,7 +29,7 @@
     <div id="app" class="app-container d-flex flex-col">
 
         {{-- header --}}
-        <header class="">
+        <header class="z-index-1">
             <nav class="navbar-expand-md">
                 <div class="container p-relative d-flex just-center">
                     {{-- <a id="logo" class="navbar-brand" href="{{ url('/') }}">

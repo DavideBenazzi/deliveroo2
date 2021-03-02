@@ -1,4 +1,4 @@
-<footer class="footer-container">
+<footer class="footer-container z-index-1">
     <div class="container">
         <a id="logo" class="navbar-brand" href="{{ url('/') }}">
             {{-- {{ config('app.name', 'Laravel') }} --}}
