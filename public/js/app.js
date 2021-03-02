@@ -49623,10 +49623,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     typesActive: false,
     nameRestaurant: "",
     checkedType: [],
-    // status lista ristoranti
-    isHidden: false,
-    // actives
-    isActive: true
     finalFiltered: [],
     finalNameSearch: [],
     //variabili per type scelti e ristoranti ridondanti all'interno del array restFiltered
@@ -49635,7 +49631,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     //variabili relative all'ordine
     checkedPlate: [],
     plates: [],
-    orderedPlates: []
+    orderedPlates: [],
+    // status lista ristoranti
+    isHidden: false,
+    // actives
+    isActive: true
   },
   methods: {
     //Funzione al change della pagina di dettaglio dell'user riferita all'ordine

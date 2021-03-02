@@ -10518,6 +10518,9 @@ main .jumbo-section {
      object-fit: cover;
   height: 100%;
 }
+main .jumbo-section .main-section {
+  height: 100%;
+}
 main .jumbo-section .blur-mask {
   width: 99%;
   height: 99%;
@@ -10609,7 +10612,7 @@ main .jumbo-section .blur-mask .type-item:hover:before {
 }
 main .jumbo-section #advancedSearch-box .icon-box,
 main .jumbo-section #advancedSearch-box .hover-icon {
-  font-size: 31px;
+  font-size: 21px;
   color: #f7f7ff;
 }
 main .jumbo-section #advancedSearch-box .hover-icon {
@@ -10630,7 +10633,7 @@ main .jumbo-section #advancedSearch-box #slide-right {
   border: 1px solid #e1804f;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.363);
-  padding: 0px 10px;
+  padding: 0px 15px;
   transition: opacity 0.4s ease-in-out;
 }
 main .jumbo-section #advancedSearch-box .icon-box {
@@ -10732,45 +10735,6 @@ main .fade-enter, main .fade-leave-to {
   opacity: 0;
 }
 
-@media screen and (max-width: 992px) {
-  header li {
-    padding-left: 20px;
-  }
-
-  footer #logo {
-    padding-left: 20px;
-  }
-
-  main .jumbo-section #advancedSearch-box .hover-icon {
-    width: 400px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
-    opacity: 1;
-  }
-  main .jumbo-section #advancedSearch-box .icon-box {
-    opacity: 0;
-  }
-  main .dark-container .restaurant-list-box button {
-    left: 50%;
-  }
-}
-@media screen and (max-width: 600px) {
-  main .jumbo-section .blur-mask #logo {
-    font-size: 36px;
-  }
-  main .jumbo-section .blur-mask .main-section h2 {
-    font-size: 26px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon {
-    left: -5%;
-    transform: scale(0.8);
-    padding-left: 0px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
-    opacity: 1;
-  }
-}
-
 .sfondo-auth {
   background-color: #50525a;
 }
@@ -10817,6 +10781,44 @@ main .fade-enter, main .fade-leave-to {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 992px) {
+  header li {
+    padding-left: 20px;
+  }
+
+  footer #logo {
+    padding-left: 20px;
+  }
+
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    width: 400px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
+  main .jumbo-section #advancedSearch-box .icon-box {
+    opacity: 0;
+  }
+  main .dark-container .restaurant-list-box button {
+    left: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .jumbo-section .blur-mask #logo {
+    font-size: 36px;
+  }
+  main .jumbo-section .blur-mask .main-section h2 {
+    font-size: 26px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    left: -5%;
+    transform: scale(0.8);
+    padding-left: 0px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
+}
 .link-add i {
   color: #df5200;
 }

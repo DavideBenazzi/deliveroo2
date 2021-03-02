@@ -8,27 +8,29 @@
                 <div class="main-section container d-flex flex-col just-around">
                     {{-- logo section --}}
                     <div class="logo-container d-flex just-center align-center flex-col">
-                        {{-- <h1 id="logo">
+                        <h1 id="logo">
                             D E L I V E R                            
                         </h1>
                         <h1 id="logo">
                             B O O
-                        </h1> --}}
-                        <div class="badge">
+                        </h1>
+
+                        {{-- ARCED LOGO --}}
+                        {{-- <div class="badge">
                             <h1 id="logo">
-                                <span class="char1">D </span>
-                                <span class="char2">E </span>
-                                <span class="char3">L </span>
-                                <span class="char4">I </span>
-                                <span class="char5">V </span>
-                                <span class="char6">E </span>
-                                <span class="char7">R</span>
+                                <span id="logo" class="char1">D </span>
+                                <span id="logo" class="char2">E </span>
+                                <span id="logo" class="char3">L </span>
+                                <span id="logo" class="char4">I </span>
+                                <span id="logo" class="char5">V </span>
+                                <span id="logo" class="char6">E </span>
+                                <span id="logo" class="char7">R</span>
                             </h1>
-                        </div>
+                        </div> --}}
                         
-                        <span class="boo p-relative" style="margin-top:50px; margin-right:10px">
+                        {{-- <span class="boo p-relative" style="margin-top:50px; margin-right:10px">
                             <h1 id="logo">B O O</h1>
-                        </span>
+                        </span> --}}
                     </div>
 
                     {{-- our types --}}
