@@ -1,0 +1,299 @@
+.advanced-search-jumbo {
+    background-size: 100%;
+    background-size: cover;
+    background-position-y: 90%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100%;
+
+    .container {
+        height: 100%;
+
+        .advanced-search {
+            height: 55%;
+            width: 100%;
+            margin-top:15px;
+            padding-left: 20px;
+            border: 2px solid $orange;
+            border-radius: 10px;
+            background-color: rgba(37, 32, 32, 0.93);
+            backdrop-filter: blur(5px);
+
+            .type-item {
+                
+            
+            // PROVA 1
+            // .c-custom-checkbox {
+            //     cursor: pointer;
+            
+            //   display: flex;
+            //   align-items: start;
+            
+            //   --checked-state-bg-color: $orange;
+            //   --checked-state-check-color: $dark;
+            //   --outline-color: var(--checked-state-bg-color);
+            //   --outline-offset: 2px;
+            // }
+
+
+            // // hide the checkbox accessibly
+            // .c-custom-checkbox input {
+            //     /* remove the checkbox from the page flow, positioning it on top of the SVG */
+            //     position: absolute;
+            //     /* set same dimensions as the SVG */
+            //     width: 1em;
+            //     height: 1em;
+            //     /* hide it */
+            //     opacity: 0.00001;
+            // }
+
+            // // basic styles for the svg
+            // .c-custom-checkbox svg {
+            //     /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
+            //     width: 1em;
+            //     height: 1em;
+                
+            //     margin-right: 0.5em;
+            //     margin-top: .1em;
+            
+            //     /* apply a transition to the elements inside the svg */
+            //     * {
+            //     transition: all 0.1s linear;
+            //     }
+            // }
+
+            // // style changes inside the svg when the checkbox is checked
+            // .c-custom-checkbox input:checked + svg {
+            //     .cb-bg {
+            //     fill: var(rgba(37, 32, 32, 0.822));
+            //     stroke: var(rgba(37, 32, 32, 0.822));
+            //     }
+            
+            //     .cb-cm {
+            //     stroke: var($orange);
+            //     }
+            // }
+
+            // .c-custom-checkbox input:focus + svg {
+            //     outline: 3px solid var($orange);
+            //     outline-offset: var($orange);
+            // }
+
+            // .c-custom-checkbox input:focus:not(:focus-visible) + svg {
+            //     outline: none;
+            // }
+
+            // /* WHCM styles */
+            // .c-custom-checkbox svg {
+            //     @media screen and (-ms-high-contrast: active) {
+            //     // rect {
+            //     //     stroke: windowText;
+            //     // }
+            //     }
+            // }
+
+            // // @media screen and (-ms-high-contrast: active) {
+            // //     .c-custom-checkbox input[type="checkbox"]:checked ~ svg {
+            // //       rect {
+            // //         fill: windowText;
+            // //       }
+              
+            // //       polyline {
+            // //         stroke: highlight;
+            // //       }
+            // //     }
+            // // }
+                
+            // PROVA 2
+            // .c-custom-checkbox {
+            // cursor: pointer;
+
+            // display: flex;
+            // align-items: start;
+
+            // --checked-state-bg-color: #0d0d15c2;
+            // --checked-state-check-color: #e1804f;
+            // --outline-color: var(--checked-state-bg-color);
+            // --outline-offset: 2px;
+            // }
+
+            // // hide the checkbox accessibly
+            // .c-custom-checkbox input[type="checkbox"] {
+            // /* remove the checkbox from the page flow, positioning it on top of the SVG */
+            // position: absolute;
+            // /* set same dimensions as the SVG */
+            // width: 50px;
+            // height: 50px;
+            // /* hide it */
+            // opacity: 0.00001;
+            // }
+
+            // // basic styles for the svg
+            // .c-custom-checkbox svg {
+            // /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
+            // width: 1em;
+            // height: 1em;
+            
+            // margin-right: 0.5em;
+            // margin-top: .1em;
+
+            // /* apply a transition to the elements inside the svg */
+            // * {
+            //     transition: all .2s linear;
+            // }
+            // }
+
+            // // style changes inside the svg when the checkbox is checked
+            // .c-custom-checkbox input[type="checkbox"]:checked + svg {
+            //     .cb-bg {
+            //         fill: var(--checked-state-bg-color);
+            //         stroke: var(--checked-state-bg-color);
+            //     }
+
+            //     .cb-cm {
+            //         stroke: var(--checked-state-check-color);
+            //     }
+            // }
+
+            // .c-custom-checkbox input[type="checkbox"]:focus + svg {
+            // outline: 3px solid var(--outline-color);
+            // outline-offset: var(--outline-offset);
+            // }
+
+            // .c-custom-checkbox input[type="checkbox"]:focus:not(:focus-visible) + svg {
+            // outline: none;
+            // }
+
+            // /* WHCM styles */
+            // .c-custom-checkbox svg {
+            // @media screen and (-ms-high-contrast: active) {
+            //     rect {
+            //     stroke: windowText;
+            //     }
+            // }
+            // }
+
+            // @media screen and (-ms-high-contrast: active) {
+            // .c-custom-checkbox input[type="checkbox"]:checked ~ svg {
+            //     rect {
+            //     fill: windowText;
+            //     }
+
+            //     polyline {
+            //     stroke: highlight;
+            //     }
+            // }
+            // }
+            }
+
+            h3 {
+                padding: 10px 0px;
+                text-align: center;
+                
+            }
+
+            h6 {
+                padding: 18px 0px 7px;
+                margin-bottom: 0px;
+            }
+
+            .cerca {
+                margin: auto;
+
+                input {
+                text-align: center;
+                width: 50%;
+                border: 1px solid $orange;
+                border-radius: 8px;
+
+                &:focus {
+                    outline: 1px solid $orange;
+                    border-radius: 0px;
+                }
+                }
+
+                input.under-992 {
+                    text-align: center;
+                    width: 200px;
+                    border: 1px solid $orange;
+                    border-radius: 8px;
+                }
+            }
+
+            input.over-992 {
+                display: inline-block;
+            }
+            input.under-992 {
+                display: none;
+            }
+        }
+        
+        .advanced-list {
+            height: 45%;
+            width: 100%;
+            margin: 15px 0px;
+            padding-left: 10px;
+            border: 2px solid $orange;
+            border-radius: 10px;
+            background-color: rgba(37, 32, 32, 0.93);
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+
+            ul {
+                padding-left: 10px;
+                
+                .advanced-list-item {
+                    padding-top: 10px;
+                    border: 1px solid rgba(0, 0, 0, 0);
+                    transition: border .4s ease-in-out;
+
+                    &:before {
+                        content: ""; 
+                        position: absolute;
+                        bottom:0px;
+                        width: 10px;
+                        border-bottom: 2px solid $orange;
+
+                        transition: width .5s ease-in-out;
+                    }
+                
+                    &:after {
+                        content: ""; 
+                        position: absolute;
+                        bottom:0px;
+                        left: 0px;
+                        height: 10px;
+                        border-left: 2px solid $orange;
+
+                        transition: height .5s ease-in-out;
+                    }
+                    
+                    a {
+                        
+
+                        &:hover {
+                            text-decoration: none;
+                            color: $primary-color;
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover:before {
+                        width: 40%;
+                    }
+                    &:hover:after {
+                        height: 70%;
+                    }
+
+                    h5 {
+                        font-size: 19;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

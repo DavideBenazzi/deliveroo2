@@ -1,0 +1,53 @@
+@media screen and (max-width: 992px) {
+    
+    header {
+        li {
+            padding-left: 20px;
+        }
+    }
+
+    footer {
+        #logo {
+            padding-left: 20px;
+        }
+    }
+
+    main {
+
+        .jumbo-section #advancedSearch-box {
+
+            .hover-icon {
+                width: 400px;
+
+                #slide-right {
+                    opacity: 1;
+                }
+            }
+        } 
+
+        .jumbo-section #advancedSearch-box .icon-box {
+            opacity: 0;
+        }
+
+        .dark-container {
+
+            .restaurant-list-box {
+            
+                button {
+                    left: 50%;
+                }
+            }
+        }
+        
+        .advanced-search-jumbo .container .advanced-search{
+
+            input.over-992 {
+                display: none;
+            }
+            input.under-992 {
+                display: inline-block;
+            }
+        }
+    }
+
+}

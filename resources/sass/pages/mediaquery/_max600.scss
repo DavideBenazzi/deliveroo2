@@ -1,0 +1,30 @@
+@media screen and (max-width: 600px) {
+
+
+    main .jumbo-section {
+        .blur-mask {
+
+            #logo {
+            font-size: font-size(5);
+            }
+
+            .main-section h2{
+                font-size: font-size(3);
+            }
+        }
+
+
+        #advancedSearch-box {
+    
+            .hover-icon {
+                left: -5%;
+                transform: scale(0.8);
+                padding-left: 0px;
+
+                #slide-right {
+                    opacity: 1;
+                }
+            }
+        } 
+    }
+}

@@ -10475,6 +10475,10 @@ a:hover {
   color: #f7f7ff;
 }
 
+main {
+  flex-grow: 1;
+}
+
 .app-container {
   height: 100vh;
 }
@@ -10497,19 +10501,18 @@ a:hover {
   color: #2a9fd4;
 }
 
-main {
-  flex-grow: 1;
-}
-main button {
+button {
   text-decoration: none;
   border: none;
   box-shadow: none;
 }
-main .blurred {
+
+.blurred {
   background: rgba(0, 0, 0, 0.212);
   filter: blur(5px);
 }
-main .jumbo-section {
+
+.jumbo-section {
   background-size: 100%;
   background-size: cover;
   background-position-y: 90%;
@@ -10518,10 +10521,10 @@ main .jumbo-section {
      object-fit: cover;
   height: 100%;
 }
-main .jumbo-section .main-section {
+.jumbo-section .main-section {
   height: 100%;
 }
-main .jumbo-section .blur-mask {
+.jumbo-section .blur-mask {
   width: 99%;
   height: 99%;
   /* Brings the child items back in, even though the parent is `hidden` */
@@ -10529,21 +10532,21 @@ main .jumbo-section .blur-mask {
   /* Fade out all items when the parent is hovered */
   /* Fade in the currently hovered item */
 }
-main .jumbo-section .blur-mask .logo-container .badge {
+.jumbo-section .blur-mask .logo-container .badge {
   position: relative;
   width: 400px;
   border-radius: 50%;
   transform: rotate(-50deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo {
+.jumbo-section .blur-mask .logo-container #logo {
   font-size: 46px;
   font-family: "Fredericka the Great", cursive;
   font-weight: 700;
 }
-main .jumbo-section .blur-mask .logo-container #logo:hover {
+.jumbo-section .blur-mask .logo-container #logo:hover {
   cursor: default;
 }
-main .jumbo-section .blur-mask .logo-container #logo span {
+.jumbo-section .blur-mask .logo-container #logo span {
   height: 200px;
   position: absolute;
   width: 20px;
@@ -10551,50 +10554,50 @@ main .jumbo-section .blur-mask .logo-container #logo span {
   bottom: -500%;
   transform-origin: bottom center;
 }
-main .jumbo-section .blur-mask .logo-container #logo .char1 {
+.jumbo-section .blur-mask .logo-container #logo .char1 {
   transform: rotate(-30deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char2 {
+.jumbo-section .blur-mask .logo-container #logo .char2 {
   transform: rotate(-5deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char3 {
+.jumbo-section .blur-mask .logo-container #logo .char3 {
   transform: rotate(20deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char4 {
+.jumbo-section .blur-mask .logo-container #logo .char4 {
   transform: rotate(50deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char5 {
+.jumbo-section .blur-mask .logo-container #logo .char5 {
   transform: rotate(75deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char6 {
+.jumbo-section .blur-mask .logo-container #logo .char6 {
   transform: rotate(100deg);
 }
-main .jumbo-section .blur-mask .logo-container #logo .char7 {
+.jumbo-section .blur-mask .logo-container #logo .char7 {
   transform: rotate(125deg);
 }
-main .jumbo-section .blur-mask .type-list-fade {
+.jumbo-section .blur-mask .type-list-fade {
   visibility: visible;
   padding-left: 0px;
 }
-main .jumbo-section .blur-mask .type-list-fade > * {
+.jumbo-section .blur-mask .type-list-fade > * {
   visibility: visible;
 }
-main .jumbo-section .blur-mask .type-list-fade > * {
+.jumbo-section .blur-mask .type-list-fade > * {
   transition: opacity 180ms linear 100ms, background-color 180ms linear 100ms, border-radius 150ms linear 90ms;
 }
-main .jumbo-section .blur-mask .type-list-fade:hover > * {
+.jumbo-section .blur-mask .type-list-fade:hover > * {
   opacity: 0.5;
 }
-main .jumbo-section .blur-mask .type-list-fade > *:hover {
+.jumbo-section .blur-mask .type-list-fade > *:hover {
   opacity: 1;
   transition-delay: 0ms;
 }
-main .jumbo-section .blur-mask .type-item {
+.jumbo-section .blur-mask .type-item {
   background-color: none;
   font-weight: 700;
   padding: 10px;
 }
-main .jumbo-section .blur-mask .type-item:before {
+.jumbo-section .blur-mask .type-item:before {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -10604,18 +10607,18 @@ main .jumbo-section .blur-mask .type-item:before {
   border-bottom: 2px solid #e1804f;
   transition: width 0.5s ease-in-out;
 }
-main .jumbo-section .blur-mask .type-item:hover {
+.jumbo-section .blur-mask .type-item:hover {
   cursor: pointer;
 }
-main .jumbo-section .blur-mask .type-item:hover:before {
+.jumbo-section .blur-mask .type-item:hover:before {
   width: 60%;
 }
-main .jumbo-section #advancedSearch-box .icon-box,
-main .jumbo-section #advancedSearch-box .hover-icon {
+.jumbo-section #advancedSearch-box .icon-box,
+.jumbo-section #advancedSearch-box .hover-icon {
   font-size: 21px;
   color: #f7f7ff;
 }
-main .jumbo-section #advancedSearch-box .hover-icon {
+.jumbo-section #advancedSearch-box .hover-icon {
   padding-left: 30px;
   color: #f7f7ff;
   overflow: hidden;
@@ -10628,7 +10631,7 @@ main .jumbo-section #advancedSearch-box .hover-icon {
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 20px;
 }
-main .jumbo-section #advancedSearch-box #slide-right {
+.jumbo-section #advancedSearch-box #slide-right {
   opacity: 0;
   border: 1px solid #e1804f;
   border-radius: 20px;
@@ -10636,38 +10639,39 @@ main .jumbo-section #advancedSearch-box #slide-right {
   padding: 0px 15px;
   transition: opacity 0.4s ease-in-out;
 }
-main .jumbo-section #advancedSearch-box .icon-box {
+.jumbo-section #advancedSearch-box .icon-box {
   overflow: hidden;
   width: 1000px;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
-main .jumbo-section #advancedSearch-box .icon-box a:hover {
+.jumbo-section #advancedSearch-box .icon-box a:hover {
   opacity: 1;
 }
-main .jumbo-section #advancedSearch-box .wrapper {
+.jumbo-section #advancedSearch-box .wrapper {
   position: relative;
 }
-main .jumbo-section #advancedSearch-box .wrapper:hover .hover-icon {
+.jumbo-section #advancedSearch-box .wrapper:hover .hover-icon {
   width: 400px;
 }
-main .jumbo-section #advancedSearch-box .wrapper:hover #slide-right {
+.jumbo-section #advancedSearch-box .wrapper:hover #slide-right {
   opacity: 1;
 }
-main .jumbo-section #advancedSearch-box .wrapper:hover .icon-box {
+.jumbo-section #advancedSearch-box .wrapper:hover .icon-box {
   opacity: 0;
 }
-main .jumbo-section #advancedSearch-box .wrapper:hover a {
+.jumbo-section #advancedSearch-box .wrapper:hover a {
   text-decoration: none;
 }
-main .dark-container {
+
+.dark-container {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.609);
   width: 100%;
   height: 100%;
 }
-main .dark-container .restaurant-list-box {
+.dark-container .restaurant-list-box {
   position: absolute;
   left: 50%;
   top: 20%;
@@ -10675,7 +10679,7 @@ main .dark-container .restaurant-list-box {
   width: 500px;
   height: 600px;
 }
-main .dark-container .restaurant-list-box button {
+.dark-container .restaurant-list-box button {
   left: 110%;
   transform: translateX(-50%);
   border: 2px solid #e1804f;
@@ -10684,20 +10688,20 @@ main .dark-container .restaurant-list-box button {
   height: 90px;
   border-radius: 100px;
 }
-main .dark-container .restaurant-list-box button h3 {
+.dark-container .restaurant-list-box button h3 {
   top: 50%;
   left: 49%;
   transform: translate(-50%, -50%);
 }
-main .dark-container .restaurant-list-box .restaurants-list-home {
+.dark-container .restaurant-list-box .restaurants-list-home {
   padding-top: 10px;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li {
+.dark-container .restaurant-list-box .restaurants-list-home li {
   padding-top: 10px;
   border: 1px solid rgba(0, 0, 0, 0);
   transition: border 0.4s ease-in-out;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li:before {
+.dark-container .restaurant-list-box .restaurants-list-home li:before {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -10705,7 +10709,7 @@ main .dark-container .restaurant-list-box .restaurants-list-home li:before {
   border-bottom: 2px solid #e1804f;
   transition: width 0.5s ease-in-out;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li:after {
+.dark-container .restaurant-list-box .restaurants-list-home li:after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -10714,25 +10718,136 @@ main .dark-container .restaurant-list-box .restaurants-list-home li:after {
   border-left: 2px solid #e1804f;
   transition: height 0.5s ease-in-out;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li h5 {
+.dark-container .restaurant-list-box .restaurants-list-home li h5 {
   padding-left: 10px;
   font-size: 26px;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li:hover a {
+.dark-container .restaurant-list-box .restaurants-list-home li:hover a {
   text-decoration: none;
   opacity: 1;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li:hover:before {
+.dark-container .restaurant-list-box .restaurants-list-home li:hover:before {
   width: 50%;
 }
-main .dark-container .restaurant-list-box .restaurants-list-home li:hover:after {
+.dark-container .restaurant-list-box .restaurants-list-home li:hover:after {
   height: 70%;
 }
-main .fade-enter-active, main .fade-enter-leave {
+
+.fade-enter-active, .fade-enter-leave {
   transition: opacity 0.5s;
 }
-main .fade-enter, main .fade-leave-to {
+
+.fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.advanced-search-jumbo {
+  background-size: 100%;
+  background-size: cover;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+.advanced-search-jumbo .container {
+  height: 100%;
+}
+.advanced-search-jumbo .container .advanced-search {
+  height: 55%;
+  width: 100%;
+  margin-top: 15px;
+  padding-left: 20px;
+  border: 2px solid #e1804f;
+  border-radius: 10px;
+  background-color: rgba(37, 32, 32, 0.93);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.advanced-search-jumbo .container .advanced-search h3 {
+  padding: 10px 0px;
+  text-align: center;
+}
+.advanced-search-jumbo .container .advanced-search h6 {
+  padding: 18px 0px 7px;
+  margin-bottom: 0px;
+}
+.advanced-search-jumbo .container .advanced-search .cerca {
+  margin: auto;
+}
+.advanced-search-jumbo .container .advanced-search .cerca input {
+  text-align: center;
+  width: 50%;
+  border: 1px solid #e1804f;
+  border-radius: 8px;
+}
+.advanced-search-jumbo .container .advanced-search .cerca input:focus {
+  outline: 1px solid #e1804f;
+  border-radius: 0px;
+}
+.advanced-search-jumbo .container .advanced-search .cerca input.under-992 {
+  text-align: center;
+  width: 200px;
+  border: 1px solid #e1804f;
+  border-radius: 8px;
+}
+.advanced-search-jumbo .container .advanced-search input.over-992 {
+  display: inline-block;
+}
+.advanced-search-jumbo .container .advanced-search input.under-992 {
+  display: none;
+}
+.advanced-search-jumbo .container .advanced-list {
+  height: 45%;
+  width: 100%;
+  margin: 15px 0px;
+  padding-left: 10px;
+  border: 2px solid #e1804f;
+  border-radius: 10px;
+  background-color: rgba(37, 32, 32, 0.93);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+.advanced-search-jumbo .container .advanced-list ul {
+  padding-left: 10px;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item {
+  padding-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: border 0.4s ease-in-out;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 10px;
+  border-bottom: 2px solid #e1804f;
+  transition: width 0.5s ease-in-out;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 10px;
+  border-left: 2px solid #e1804f;
+  transition: height 0.5s ease-in-out;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item a:hover {
+  text-decoration: none;
+  color: #f7f7ff;
+  opacity: 1;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item:hover:before {
+  width: 40%;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item:hover:after {
+  height: 70%;
+}
+.advanced-search-jumbo .container .advanced-list ul .advanced-list-item h5 {
+  font-size: 19;
+  padding-left: 10px;
 }
 
 .sfondo-auth {
@@ -10781,44 +10896,6 @@ main .fade-enter, main .fade-leave-to {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 992px) {
-  header li {
-    padding-left: 20px;
-  }
-
-  footer #logo {
-    padding-left: 20px;
-  }
-
-  main .jumbo-section #advancedSearch-box .hover-icon {
-    width: 400px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
-    opacity: 1;
-  }
-  main .jumbo-section #advancedSearch-box .icon-box {
-    opacity: 0;
-  }
-  main .dark-container .restaurant-list-box button {
-    left: 50%;
-  }
-}
-@media screen and (max-width: 600px) {
-  main .jumbo-section .blur-mask #logo {
-    font-size: 36px;
-  }
-  main .jumbo-section .blur-mask .main-section h2 {
-    font-size: 26px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon {
-    left: -5%;
-    transform: scale(0.8);
-    padding-left: 0px;
-  }
-  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
-    opacity: 1;
-  }
-}
 .link-add i {
   color: #df5200;
 }
@@ -10876,6 +10953,50 @@ main .fade-enter, main .fade-leave-to {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 992px) {
+  header li {
+    padding-left: 20px;
+  }
+
+  footer #logo {
+    padding-left: 20px;
+  }
+
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    width: 400px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
+  main .jumbo-section #advancedSearch-box .icon-box {
+    opacity: 0;
+  }
+  main .dark-container .restaurant-list-box button {
+    left: 50%;
+  }
+  main .advanced-search-jumbo .container .advanced-search input.over-992 {
+    display: none;
+  }
+  main .advanced-search-jumbo .container .advanced-search input.under-992 {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .jumbo-section .blur-mask #logo {
+    font-size: 36px;
+  }
+  main .jumbo-section .blur-mask .main-section h2 {
+    font-size: 26px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon {
+    left: -5%;
+    transform: scale(0.8);
+    padding-left: 0px;
+  }
+  main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
+    opacity: 1;
+  }
+}
 .auth-color {
   background-color: #50525a;
   overflow-y: auto;
