@@ -26,6 +26,7 @@ const app = new Vue({
         nameRestaurant: "" ,
         checkedType:[],
         finalFiltered:[],
+        finalNameSearch:[],
         //variabili per type scelti e ristoranti ridondanti all'interno del array restFiltered
         nTypeChecked:0,
         nRestChecked:1,
@@ -74,12 +75,21 @@ const app = new Vue({
 
         //funzione per ricerca nome ristorante
         nameSearch() {
+            this.finalNameSearch = [];
             this.filteredRestaurants = [];
             this.nameRestaurant = this.nameRestaurant.toLowerCase().trim();
+
             for(let i=0; i < this.restaurants.length; i++ ) {
                 if(this.restaurants[i].nameRestaurant.toLowerCase().includes(this.nameRestaurant)) {
                     if(!this.filteredRestaurants.includes(this.restaurants[i].nameRestaurant)) {
                         this.filteredRestaurants.push(this.restaurants[i].nameRestaurant);
+                         //ciclo for con cui passo l'array con i nomi dei ristoranti giusti
+                        for(let d=0; d < this.filteredRestaurants.length ; d++){
+                            //if che serve a fare in modo di passare tutto l'oggetto e non solo il nome del ristorante corretto
+                            if(this.filteredRestaurants[d] == this.restaurants[i].nameRestaurant){
+                                this.finalNameSearch.push(this.restaurants[i]);
+                            }
+                        }
                     }
 
                 }

@@ -10,9 +10,9 @@
                 {{-- print name restaurant that have search parameters --}}
                 <div v-show="nameActive">
                     <ul>
-                        <li v-for="restaurants in filteredRestaurants">
+                        <li v-for="restaurants in finalNameSearch">
                             <a :href="advrouting(restaurants.user_id)">
-                                @{{ restaurants }}
+                                @{{ restaurants.nameRestaurant }}
                             </a>
                         </li>
                     </ul>
