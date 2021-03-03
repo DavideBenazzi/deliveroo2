@@ -49725,6 +49725,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
           for (var _a = 0; _a < this.checkedType.length; _a++) {
             if (this.checkedType[_a] == this.restaurants[_i].type_id) {
               this.restFiltered.push(this.restaurants[_i].nameRestaurant);
+              this.restFiltered = this.restFiltered.sort();
             }
           } //ciclo su ristoranti già filtrati
 
@@ -49861,8 +49862,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\deliveroo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\deliveroo2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

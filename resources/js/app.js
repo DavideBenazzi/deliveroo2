@@ -135,6 +135,7 @@ const app = new Vue({
                     for(let a = 0 ; a < this.checkedType.length ; a++){
                         if(this.checkedType[a] == this.restaurants[i].type_id){
                             this.restFiltered.push(this.restaurants[i].nameRestaurant);
+                            this.restFiltered = this.restFiltered.sort();
                         }
                     }
                     //ciclo su ristoranti già filtrati
