@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     public function plate() {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('App\Plate');
     }
     protected $fillable = [
         'name',

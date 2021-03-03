@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('nameRestaurant', 30);
+            $table->string('nameRestaurant', 50);
             $table->string('emailRestaurant',80);
             $table->string('phone' , 12);
             $table->text('address');

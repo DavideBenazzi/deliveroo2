@@ -13,19 +13,29 @@ class TypesTableSeeder extends Seeder
     public function run()
     {
         $types = [
-            'Americana',
-            'Cinese',
+
+            'Ristorante',
             'Pasticceria',
-            'Giapponese',
-            'Greca',
-            'Indiana',
-            'Italiana',
-            'Messicana',
-            'Pizzeria',
-            'Sushi',
-            'Thailandese',
-            'Vegetariana', 
             'Lounge Bar',
+            'Sushi-Giapponese',
+            'Pizzeria',
+            'Burgeria',
+            'Cinese',
+            'Vegetariana',
+
+            // 'Americana',
+            // 'Cinese',
+            // 'Pasticceria',
+            // 'Giapponese',
+            // 'Greca',
+            // 'Indiana',
+            // 'Italiana',
+            // 'Messicana',
+            // 'Pizzeria',
+            // 'Sushi',
+            // 'Thailandese',
+            // 'Vegetariana', 
+            // 'Lounge Bar',
         ];
         foreach($types as $type) {
             $newType = new Type();
