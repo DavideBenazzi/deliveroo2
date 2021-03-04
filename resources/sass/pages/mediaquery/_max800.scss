@@ -1,0 +1,18 @@
+
+@media screen and(max-width: 800px){
+    main .jumbo-section .blur-mask{
+
+        .main-section #logo{
+            font-size: font-size(5);
+        }
+        .main-section h2{
+            font-size: font-size(2);
+        }
+        .type-item{
+            h4{
+                font-size: font-size(2);
+            }
+            width: calc(100% / 3);
+        }
+    }
+}
