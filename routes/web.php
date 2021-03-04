@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/' , 'StaticPageController@home')->name('welcome');
 Route::get('/advancedResearch' , 'StaticPageController@advancedResearch')->name('advancedResearch');
+Route::get('/advancedResearch/restaurants/payment' , 'OrderController@index')->name('payment');
 Route::resource('/restaurants', 'RestaurantController');
 Route::resource('/advancedResearch/restaurants', 'RestaurantController');
 Route::resource('/advancedResearch/restaurants/orders', 'OrderController');
+
 
 Auth::routes();
 

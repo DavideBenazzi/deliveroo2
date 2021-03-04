@@ -10760,9 +10760,9 @@ button {
   padding-left: 20px;
   border: 2px solid #e1804f;
   border-radius: 10px;
-  background-color: rgba(37, 32, 32, 0.93);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background-color: rgba(37, 32, 32, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
 .advanced-search-jumbo .container .advanced-search h3 {
   padding: 10px 0px;
@@ -10804,9 +10804,9 @@ button {
   padding-left: 10px;
   border: 2px solid #e1804f;
   border-radius: 10px;
-  background-color: rgba(37, 32, 32, 0.93);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background-color: rgba(37, 32, 32, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   overflow-y: auto;
 }
 .advanced-search-jumbo .container .advanced-list ul {
@@ -10951,6 +10951,64 @@ button {
 .show-plate .tre-button {
   width: 80%;
   margin: 0 auto;
+}
+
+main .soloColore {
+  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sectionPlate {
+  padding: 60px 0 60px;
+}
+.sectionPlate .plateBox {
+  width: 375px;
+}
+.sectionPlate .plateBox .titlePlateBox {
+  width: 100%;
+  border-radius: 25px;
+  background-color: #df5200;
+  background-color: rgba(223, 82, 0, 0.55);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 3px 2px 1px;
+}
+.sectionPlate .plateBox img {
+  width: 100%;
+  border-radius: 25px;
+  border: 4px solid rgba(223, 82, 0, 0.55);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.sectionPlate .plateBox .plateTextDetail {
+  width: 100%;
+  height: 300px;
+  background-color: #3e414a;
+  background-color: rgba(19, 4, 4, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 25px 15px 25px;
+}
+.sectionPlate .plateBox .plateTextDetail span {
+  color: #e1804f;
+}
+.sectionPlate .orderPlate {
+  padding-left: 0;
+}
+.sectionPlate .orderStyleMaxi {
+  width: 60%;
+}
+.sectionPlate .orderStyleMini {
+  width: 10%;
+}
+.sectionPlate .orderStyle {
+  color: #e1804f;
+  background-color: rgba(37, 32, 32, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border: none;
 }
 
 @media screen and (max-width: 992px) {

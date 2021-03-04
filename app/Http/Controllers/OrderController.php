@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return view('restaurants/payment');
     }
 
     /**
@@ -35,25 +35,25 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $plateOrdered = [];
-        $quantity = [];
+        // $plateOrdered = [];
+        // $quantity = [];
 
 
-        $data = $request->all();
-        $plateOrdered = $data['plateName'];
-        $quantity = $data['quantity'];
-        // dd($quantity);
-        for($i = 0; $i < COUNT($plateOrdered); $i++) {
-            $newOrder = new Order();
-            $newOrder->fill($data);
-            $newOrder->fill(['order' => $plateOrdered[$i]]);
-            $newOrder->fill(['quantity' => $quantity[$i]]);
-            $saved = $newOrder->save();
-        }   
+        // $data = $request->all();
+        // $plateOrdered = $data['plateName'];
+        // $quantity = $data['quantity'];
+        // // dd($quantity);
+        // for($i = 0; $i < COUNT($plateOrdered); $i++) {
+        //     $newOrder = new Order();
+        //     $newOrder->fill($data);
+        //     $newOrder->fill(['order' => $plateOrdered[$i]]);
+        //     $newOrder->fill(['quantity' => $quantity[$i]]);
+        //     $saved = $newOrder->save();
+        // }   
 
-        if($saved){
-            return redirect()->route('advancedResearch');
-        }
+        // if($saved){
+        //     return redirect()->route('payment');
+        // }
     }
 
     /**
@@ -64,7 +64,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

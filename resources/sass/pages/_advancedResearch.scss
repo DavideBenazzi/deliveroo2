@@ -16,8 +16,8 @@
             padding-left: 20px;
             border: 2px solid $orange;
             border-radius: 10px;
-            background-color: rgba(37, 32, 32, 0.93);
-            backdrop-filter: blur(5px);
+            background-color: rgba(37, 32, 32, 0.65);
+            backdrop-filter: blur(15px);
 
             .type-item {
                 
@@ -204,6 +204,7 @@
                 text-align: center;
                 width: 50%;
                 border: 1px solid $orange;
+                // backdrop-filter: blur(15px);
                 border-radius: 8px;
 
                 &:focus {
@@ -235,8 +236,8 @@
             padding-left: 10px;
             border: 2px solid $orange;
             border-radius: 10px;
-            background-color: rgba(37, 32, 32, 0.93);
-            backdrop-filter: blur(5px);
+            background-color: rgba(37, 32, 32, 0.65);
+            backdrop-filter: blur(15px);
             overflow-y: auto;
 
             ul {
