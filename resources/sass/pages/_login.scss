@@ -14,9 +14,13 @@
         }
         //form tipologie della registrazione da sistemare quando sono
         .types-form{
-            width: 50%;
+            width: 70%;
             margin: 0 auto;
-
+        }
+        .register{
+            padding-left: 5%;
+            width: calc(100% / 4);
+            text-align: center;
         }
      }
 

@@ -117,9 +117,9 @@
 
                         {{-- Form dei tipi --}}
 
-                        <div class='form-group types-form row just-between'>
+                        <div class='form-group types-form d-flex wrap'>
                             @foreach ($types as $type)
-                                <div class='form-check register'>
+                                <div class='form-check register d-flex'>
                                     <input type="checkbox" class='form-check-input' name='types[]' id='type-{{$type->id}}' value="{{$type->id}}">
                                     <label for="type-{{$type->id}}">{{$type->name}}</label>
                                 </div>
