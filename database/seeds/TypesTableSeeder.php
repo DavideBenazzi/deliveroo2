@@ -17,7 +17,7 @@ class TypesTableSeeder extends Seeder
             'Ristorante',
             'Pasticceria',
             'Lounge Bar',
-            'Sushi-Giapponese',
+            'Giapponese',
             'Pizzeria',
             'Burgeria',
             'Cinese',
@@ -34,7 +34,7 @@ class TypesTableSeeder extends Seeder
             // 'Pizzeria',
             // 'Sushi',
             // 'Thailandese',
-            // 'Vegetariana', 
+            // 'Vegetariana',
             // 'Lounge Bar',
         ];
         foreach($types as $type) {

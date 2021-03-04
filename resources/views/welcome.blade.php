@@ -9,7 +9,7 @@
                     {{-- logo section --}}
                     <div class="logo-container d-flex just-center align-center flex-col">
                         <h1 id="logo">
-                            D E L I V E R                            
+                            D E L I V E R
                         </h1>
                         <h1 id="logo">
                             B O O
@@ -27,7 +27,7 @@
                                 <span id="logo" class="char7">R</span>
                             </h1>
                         </div> --}}
-                        
+
                         {{-- <span class="boo p-relative" style="margin-top:50px; margin-right:10px">
                             <h1 id="logo">B O O</h1>
                         </span> --}}
@@ -37,12 +37,12 @@
                     <h2 style="text-align:center" class="pb-3">Select a restaurant's type, then choose your favourite one.</h2>
 
                     {{-- types list --}}
-                    <ul class="type-list-fade d-inline-flex wrap ul-nostyle just-between just-around">
-                        <li class="type-item ml-2 p-relative" v-for="type in types" v-on:click="filterType(type.id), isActive=false">
+                    <ul class="type-list-fade d-inline-flex wrap ul-nostyle just-center">
+                        <li class="type-item  p-relative" v-for="type in types" v-on:click="filterType(type.id), isActive=false">
                             <h4>@{{ type.name }}</h4>
                         </li>
                     </ul>
-                    
+
 
                     {{-- link advanced search --}}
                     <div id="advancedSearch-box">

@@ -10596,6 +10596,8 @@ button {
   background-color: none;
   font-weight: 700;
   padding: 10px;
+  width: calc(100% / 4);
+  text-align: center;
 }
 .jumbo-section .blur-mask .type-item:before {
   content: "";
@@ -10674,7 +10676,7 @@ button {
 .dark-container .restaurant-list-box {
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 10%;
   transform: translate(-50%);
   width: 500px;
   height: 600px;
@@ -10754,7 +10756,7 @@ button {
   height: 100%;
 }
 .advanced-search-jumbo .container .advanced-search {
-  height: 55%;
+  height: 60%;
   width: 100%;
   margin-top: 15px;
   padding-left: 20px;
@@ -10798,7 +10800,7 @@ button {
   display: none;
 }
 .advanced-search-jumbo .container .advanced-list {
-  height: 45%;
+  height: 39%;
   width: 100%;
   margin: 15px 0px;
   padding-left: 10px;
@@ -11039,13 +11041,34 @@ main .soloColore {
     display: inline-block;
   }
 }
-@media screen and (max-width: 600px) {
-  main .jumbo-section .blur-mask #logo {
+@media screen and (max-width: 800px) {
+  main .jumbo-section .blur-mask .main-section #logo {
     font-size: 36px;
   }
   main .jumbo-section .blur-mask .main-section h2 {
-    font-size: 26px;
+    font-size: 21px;
   }
+  main .jumbo-section .blur-mask .type-item {
+    width: calc(100% / 3);
+  }
+  main .jumbo-section .blur-mask .type-item h4 {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .jumbo-section .blur-mask .main-section #logo {
+    font-size: 31px;
+  }
+  main .jumbo-section .blur-mask .main-section h2 {
+    font-size: 21px;
+  }
+  main .jumbo-section .blur-mask .type-item {
+    width: calc(100% / 2);
+  }
+  main .jumbo-section .blur-mask .type-item h4 {
+    font-size: 18px;
+  }
+
   main .jumbo-section #advancedSearch-box .hover-icon {
     left: -5%;
     transform: scale(0.8);
@@ -11053,6 +11076,29 @@ main .soloColore {
   }
   main .jumbo-section #advancedSearch-box .hover-icon #slide-right {
     opacity: 1;
+  }
+
+  main .advanced-search {
+    overflow-y: auto;
+  }
+
+  main .dark-container .restaurant-list-box {
+    top: 5%;
+    width: 500px;
+  }
+  main .dark-container .restaurant-list-box ul {
+    overflow-y: auto;
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .dark-container .restaurant-list-box {
+    top: 5%;
+    width: 400px;
+  }
+  main .dark-container .restaurant-list-box ul {
+    overflow-y: auto;
+    padding-left: 20px;
   }
 }
 .auth-color {

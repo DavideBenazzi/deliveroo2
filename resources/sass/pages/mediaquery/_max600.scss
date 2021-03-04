@@ -1,21 +1,24 @@
 @media screen and (max-width: 600px) {
+    main .jumbo-section .blur-mask{
 
+        .main-section #logo{
+            font-size: font-size(4);
+        }
+        .main-section h2{
+            font-size: font-size(2);
+        }
+        .type-item{
+            h4{
+                font-size: 18px;
+            }
+            width: calc(100% / 2);
+        }
+    }
 
     main .jumbo-section {
-        .blur-mask {
-
-            #logo {
-            font-size: font-size(5);
-            }
-
-            .main-section h2{
-                font-size: font-size(3);
-            }
-        }
-
 
         #advancedSearch-box {
-    
+
             .hover-icon {
                 left: -5%;
                 transform: scale(0.8);
@@ -25,6 +28,19 @@
                     opacity: 1;
                 }
             }
-        } 
+        }
+    }
+    main .advanced-search{
+        overflow-y: auto;
+    }
+
+    //media query parte over lista ristoranti
+    main .dark-container .restaurant-list-box{
+        ul{
+            overflow-y: auto;
+            padding-left: 10px;
+        }
+        top:5%;
+        width: 500px;
     }
 }

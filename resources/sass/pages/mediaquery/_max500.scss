@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px) {
+    main .dark-container .restaurant-list-box{
+        ul{
+            overflow-y: auto;
+            padding-left: 20px;
+        }
+        top:5%;
+        width: 400px;
+    }
+    main .show-plate{
+        img{
+            width: 220px;
+            height: 180px;
+        }
+    }
+    main .auth-color .auth-card .types-form{
+            width:100%;
+            margin: 0;
+    }
+
+}

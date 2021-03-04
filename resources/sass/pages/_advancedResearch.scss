@@ -10,7 +10,7 @@
         height: 100%;
 
         .advanced-search {
-            height: 55%;
+            height: 60%;
             width: 100%;
             margin-top:15px;
             padding-left: 20px;
@@ -20,15 +20,15 @@
             backdrop-filter: blur(15px);
 
             .type-item {
-                
-            
+
+
             // PROVA 1
             // .c-custom-checkbox {
             //     cursor: pointer;
-            
+
             //   display: flex;
             //   align-items: start;
-            
+
             //   --checked-state-bg-color: $orange;
             //   --checked-state-check-color: $dark;
             //   --outline-color: var(--checked-state-bg-color);
@@ -52,10 +52,10 @@
             //     /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
             //     width: 1em;
             //     height: 1em;
-                
+
             //     margin-right: 0.5em;
             //     margin-top: .1em;
-            
+
             //     /* apply a transition to the elements inside the svg */
             //     * {
             //     transition: all 0.1s linear;
@@ -68,7 +68,7 @@
             //     fill: var(rgba(37, 32, 32, 0.822));
             //     stroke: var(rgba(37, 32, 32, 0.822));
             //     }
-            
+
             //     .cb-cm {
             //     stroke: var($orange);
             //     }
@@ -97,13 +97,13 @@
             // //       rect {
             // //         fill: windowText;
             // //       }
-              
+
             // //       polyline {
             // //         stroke: highlight;
             // //       }
             // //     }
             // // }
-                
+
             // PROVA 2
             // .c-custom-checkbox {
             // cursor: pointer;
@@ -133,7 +133,7 @@
             // /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
             // width: 1em;
             // height: 1em;
-            
+
             // margin-right: 0.5em;
             // margin-top: .1em;
 
@@ -189,7 +189,7 @@
             h3 {
                 padding: 10px 0px;
                 text-align: center;
-                
+
             }
 
             h6 {
@@ -228,9 +228,9 @@
                 display: none;
             }
         }
-        
+
         .advanced-list {
-            height: 45%;
+            height: 39%;
             width: 100%;
             margin: 15px 0px;
             padding-left: 10px;
@@ -242,14 +242,14 @@
 
             ul {
                 padding-left: 10px;
-                
+
                 .advanced-list-item {
                     padding-top: 10px;
                     border: 1px solid rgba(0, 0, 0, 0);
                     transition: border .4s ease-in-out;
 
                     &:before {
-                        content: ""; 
+                        content: "";
                         position: absolute;
                         bottom:0px;
                         width: 10px;
@@ -257,9 +257,9 @@
 
                         transition: width .5s ease-in-out;
                     }
-                
+
                     &:after {
-                        content: ""; 
+                        content: "";
                         position: absolute;
                         bottom:0px;
                         left: 0px;
@@ -268,9 +268,9 @@
 
                         transition: height .5s ease-in-out;
                     }
-                    
+
                     a {
-                        
+
 
                         &:hover {
                             text-decoration: none;
