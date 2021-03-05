@@ -10894,8 +10894,13 @@ button {
   color: #df5200;
 }
 .auth-color .auth-card .types-form {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+}
+.auth-color .auth-card .register {
+  padding-left: 5%;
+  width: calc(100% / 4);
+  text-align: center;
 }
 
 .link-add i {
@@ -11100,6 +11105,16 @@ main .soloColore {
     overflow-y: auto;
     padding-left: 20px;
   }
+
+  main .show-plate img {
+    width: 220px;
+    height: 180px;
+  }
+
+  main .auth-color .auth-card .types-form {
+    width: 100%;
+    margin: 0;
+  }
 }
 .auth-color {
   background-color: #50525a;
@@ -11115,6 +11130,11 @@ main .soloColore {
   color: #df5200;
 }
 .auth-color .auth-card .types-form {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+}
+.auth-color .auth-card .register {
+  padding-left: 5%;
+  width: calc(100% / 4);
+  text-align: center;
 }
